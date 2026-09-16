@@ -8,6 +8,20 @@ on:
 jobs:
   verificar:
     runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: pgvector/pgvector:pg16
+        env:
+          POSTGRES_USER: agente_voz
+          POSTGRES_PASSWORD: agente_voz
+          POSTGRES_DB: agente_voz
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U agente_voz -d agente_voz"
+          --health-interval 5s
+          --health-timeout 5s
+          --health-retries 5
     steps:
       - name: Descargar el codigo
         uses: actions/checkout@v7
@@ -28,6 +42,9 @@ jobs:
 
       - name: Tipos (mypy)
         run: uv run mypy src pruebas
+
+      - name: Aplicar esquema de la base
+        run: PGPASSWORD=agente_voz psql -h localhost -U agente_voz -d agente_voz -f src/agente_voz/api_banco/esquema.sql
 
       - name: Pruebas (sin en_vivo)
         run: uv run pytest -m "not en_vivo"

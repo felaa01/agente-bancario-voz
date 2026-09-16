@@ -7,7 +7,10 @@ authors = [
     { name = "Juan Andres", email = "jandrestn2001@gmail.com" }
 ]
 requires-python = ">=3.12"
-dependencies = []
+dependencies = [
+    "asyncpg>=0.31.0",
+    "pydantic>=2.13.5",
+]
 
 [build-system]
 requires = ["uv_build>=0.12.15,<0.13.0"]
@@ -18,6 +21,7 @@ dev = [
     "mypy>=2.3.1",
     "pre-commit>=4.6.2",
     "pytest>=9.1.1",
+    "pytest-asyncio>=1.4.0",
     "pytest-cov>=7.1.0",
     "ruff>=0.16.7",
 ]
@@ -33,10 +37,15 @@ select = ["E", "W", "F", "I", "B", "UP", "SIM", "N", "RUF", "PT", "ANN"]
 [tool.mypy]
 strict = true
 
+[[tool.mypy.overrides]]
+module = "asyncpg.*"
+ignore_missing_imports = true
+
 [tool.pytest.ini_options]
 testpaths = ["pruebas"]
 python_files = ["prueba_*.py"]
 python_functions = ["prueba_*"]
+asyncio_mode = "auto"
 markers = [
     "en_vivo: prueba que llama a un LLM real; queda fuera del CI (correr con -m en_vivo)",
 ]
