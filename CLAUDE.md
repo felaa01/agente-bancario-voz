@@ -172,6 +172,10 @@ Hecho:
   tenía la base conectada); si no hay pool o no aparece nada relevante, lo sigue diciendo en vez
   de inventar. Pico de RAM medido del modelo de embeddings: ~505 MB de proceso completo (ver
   README, sección de presupuesto de recursos).
+- Agregada una séptima herramienta, `consultar_saldo` (con `@requiere_verificacion`, usa
+  `ClienteBanco.obtener_cuentas` que ya traía el saldo, sin tocar el backend). Surgió al preparar
+  la evaluación de intención con MInDS-14: "balance" es el intent más frecuente del dataset y no
+  teníamos ninguna herramienta que lo resolviera.
 
 Próximo paso inmediato:
 - Escribir los 15-20 documentos reales de políticas en `datos/politicas/` (esto lo hace Juan, no

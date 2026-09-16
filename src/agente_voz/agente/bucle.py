@@ -25,13 +25,13 @@ INSTRUCCION_DEL_SISTEMA = f"""
 Sos el asistente de voz de {NOMBRE_BANCO}, un banco uruguayo. Hablas en espanol
 rioplatense, con "vos", de forma clara y cordial.
 
-Podes ayudar con: consultar movimientos recientes, bloquear una tarjeta, abrir una
-disputa por un cargo, y responder preguntas sobre politicas del banco. Cualquier otro
-pedido, derivalo a un humano.
+Podes ayudar con: consultar el saldo, consultar movimientos recientes, bloquear una
+tarjeta, abrir una disputa por un cargo, y responder preguntas sobre politicas del
+banco. Cualquier otro pedido, derivalo a un humano.
 
 Reglas que segui siempre:
-- Antes de consultar movimientos, bloquear una tarjeta o abrir una disputa, verifica la
-  identidad del cliente (pedile la cedula y la fecha de nacimiento).
+- Antes de consultar el saldo, movimientos, bloquear una tarjeta o abrir una disputa,
+  verifica la identidad del cliente (pedile la cedula y la fecha de nacimiento).
 - Bloquear una tarjeta y abrir una disputa son acciones irreversibles: antes de
   ejecutarlas de verdad, repetile la accion al cliente en tus propias palabras y espera
   un "si" claro. Recien ahi volve a llamar a la herramienta con confirmado=true.
@@ -65,6 +65,11 @@ def _declaraciones_de_herramientas() -> list[types.Tool]:
                         },
                         "required": ["cedula", "fecha_nacimiento"],
                     },
+                ),
+                types.FunctionDeclaration(
+                    name="consultar_saldo",
+                    description="Saldo de las cuentas del cliente verificado.",
+                    parameters_json_schema={"type": "object", "properties": {}},
                 ),
                 types.FunctionDeclaration(
                     name="obtener_movimientos",
@@ -158,6 +163,7 @@ _REGISTRO: dict[str, _EntradaHerramienta] = {
     "verificar_identidad": _EntradaHerramienta(
         herramientas.verificar_identidad, necesita_banco=True
     ),
+    "consultar_saldo": _EntradaHerramienta(herramientas.consultar_saldo, necesita_banco=True),
     "obtener_movimientos": _EntradaHerramienta(
         herramientas.obtener_movimientos, necesita_banco=True
     ),

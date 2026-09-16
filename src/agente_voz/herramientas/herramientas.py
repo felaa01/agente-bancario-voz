@@ -44,6 +44,19 @@ async def verificar_identidad(
 
 
 @requiere_verificacion
+async def consultar_saldo(sesion: Sesion, banco: ClienteBanco) -> str:
+    cliente_id = _id_cliente_verificado(sesion)
+    cuentas = await banco.obtener_cuentas(cliente_id)
+
+    if not cuentas:
+        return "No encontre cuentas para este cliente."
+    return "\n".join(
+        f"{cuenta.tipo} {cuenta.numero_cuenta}: {cuenta.saldo} {cuenta.moneda}"
+        for cuenta in cuentas
+    )
+
+
+@requiere_verificacion
 async def obtener_movimientos(sesion: Sesion, banco: ClienteBanco, limite: int = 20) -> str:
     cliente_id = _id_cliente_verificado(sesion)
     cuentas = await banco.obtener_cuentas(cliente_id)

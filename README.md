@@ -39,10 +39,10 @@ auditar cada etapa por separado, algo no negociable en un dominio bancario:
 audio -> VAD (Silero) -> STT (faster-whisper) -> agente LLM (Gemini) -> TTS -> audio
 ```
 
-El agente corre un loop de herramientas escrito a mano (sin framework de agentes) contra seis
-herramientas: `verificar_identidad`, `obtener_movimientos`, `bloquear_tarjeta`, `abrir_disputa`,
-`buscar_politicas` (RAG híbrido sobre políticas propias, en PostgreSQL + pgvector) y
-`derivar_a_humano`. El backend bancario es un servicio FastAPI con datos sintéticos.
+El agente corre un loop de herramientas escrito a mano (sin framework de agentes) contra siete
+herramientas: `verificar_identidad`, `consultar_saldo`, `obtener_movimientos`, `bloquear_tarjeta`,
+`abrir_disputa`, `buscar_politicas` (RAG híbrido sobre políticas propias, en PostgreSQL + pgvector)
+y `derivar_a_humano`. El backend bancario es un servicio FastAPI con datos sintéticos.
 
 Detalle completo, trade-offs y el porqué de cada elección: [docs/plan-del-proyecto.md](docs/plan-del-proyecto.md).
 

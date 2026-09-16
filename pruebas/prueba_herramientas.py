@@ -88,6 +88,28 @@ async def prueba_verificar_identidad_bloquea_tras_tres_intentos(
     assert "bloquead" in resultado.lower()
 
 
+async def prueba_consultar_saldo_sin_verificar_rechaza(
+    pool: asyncpg.Pool, url_base_api: str
+) -> None:
+    sesion = Sesion(id_sesion="s1")
+
+    async with ClienteBanco(url_base_api) as banco:
+        with pytest.raises(SesionNoVerificadaError):
+            await herramientas.consultar_saldo(sesion, banco)
+
+
+async def prueba_consultar_saldo_verificada(pool: asyncpg.Pool, url_base_api: str) -> None:
+    await _crear_cliente_con_cuenta_tarjeta_y_movimiento(pool)
+    sesion = Sesion(id_sesion="s1")
+
+    async with ClienteBanco(url_base_api) as banco:
+        await herramientas.verificar_identidad(sesion, banco, CEDULA, FECHA_NACIMIENTO)
+        resultado = await herramientas.consultar_saldo(sesion, banco)
+
+    assert "1000" in resultado
+    assert "UYU" in resultado
+
+
 async def prueba_obtener_movimientos_sin_verificar_rechaza(
     pool: asyncpg.Pool, url_base_api: str
 ) -> None:

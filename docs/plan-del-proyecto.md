@@ -42,8 +42,8 @@ español). Las acciones (bloquear tarjeta, abrir disputa) son idempotentes.
 
 ## El agente
 
-**Herramientas:** `verificar_identidad`, `obtener_movimientos`, `bloquear_tarjeta`,
-`abrir_disputa`, `buscar_politicas`, `derivar_a_humano`.
+**Herramientas:** `verificar_identidad`, `consultar_saldo`, `obtener_movimientos`,
+`bloquear_tarjeta`, `abrir_disputa`, `buscar_politicas`, `derivar_a_humano`.
 
 - Las herramientas sensibles rechazan llamadas de sesiones no verificadas, diga lo que diga el
   modelo.
