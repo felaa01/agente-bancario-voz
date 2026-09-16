@@ -34,6 +34,9 @@ sembrar:
 cargar-politicas:
 	uv run python -m agente_voz.rag.cargador
 
+evaluar-intenciones:
+	uv run --env-file .env python -m agente_voz.evaluaciones.ejecutar_intenciones
+
 api:
 	uv run uvicorn agente_voz.api_banco.app:app --reload
 

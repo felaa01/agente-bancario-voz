@@ -1,0 +1,170 @@
+[
+  {
+    "transcripcion": "voy a realizar un viaje al extranjero y me gustaría saber si puedo usar allí mi tarjeta de crédito",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "hola quería saber si podía pagar con mi tarjeta en el extranjero puedo usarla",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "hola buenas me voy de vacaciones a Estados Unidos y me gustaría saber qué tengo que hacer para pagar cuando esté allí",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "hola llamada porque me gustaría cambiar mi dirección que aparece en mi cuenta dado que mirando la cartilla y me ha dado cuenta que tenéis mi dirección pasada de manera que no me llegaban los las cartas a mi domicilio actual gracias",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola quiero cambiar mi dirección",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola necesito cambiar mi dirección de domicilio",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "bueno pues resulta que la aplicación no se actualiza cuando cuando he introducido saldo de la nueva cuenta y me dice que ahora mismo no está disponible que no puedo acceder a mi cuenta",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "hola buena la aplicación no se carga el saldo de mi cuenta nueva y sí que la voy a decir está siendo reparado y yo no puedo acceder a mi cuenta",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "tengo un problema con la aplicación del móvil",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "hola buenos días me gustaría saber cuál es la cantidad máxima que puedo retirar de una vez en un cajero y",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "hola buenas llamado para preguntar cuánto puedo sacar del cajero automático es decir si tengo algún límite y cómo podría cambiar el límite",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "buenas tardes me gustaría saber cuál es la cantidad máxima de dinero que puedo retirar de un cajero automático",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "hola buenas llamaba para saber si me podrías decir el saldo que tengo actualmente en la cuenta",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola me gustaría saber el saldo que tengo la cuenta corriente que tengo contrato",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola quería saber el saldo de mi cuenta por favor",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola buenas llamaba porque tengo una pregunta sobre un préstamo comercial",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola buenos días hoy fuera mitad ya me hace un tiempo para vernos sabes lo que habían problemas y todo ahora tenía una nueva consulta porque quiero abrir un negocio y necesito solicitar un préstamo a donde tendría que dirigirme para solicitarlo y documentación tendría que llevar para pedir este",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola quisiera solicitar un nuevo préstamo para un negocio que quiero abrir",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola buenas mira te llamaba porque tengo un problema con mi tarjeta está intentando hacer un pago pero no no funciona no se puede pagar",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "hola he intentado pagar con mi tarjeta y me la han rechazado quería saber qué puedo hacer",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "porque se rechaza mi pago",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "necesito depositar un dinero en efectivo en mi cuenta entonces quisiera saber cuál es la manera más fácil de hacerlo",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "hola me gustaría saber cómo transferir dinero a mi cuenta gracias",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "hola buenas tardes mira me gustaría depositar dinero en mi cuenta de banco",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "si hola buenos días yo nos clientes y quería comentarte un tema domiciliaciones bancarias es una es una domiciliación en cuestión quisiera devolver un recibo de la luz del mes de junio si a ver si me lo pudiera y no pude ir a buscar por favor y quisiera que se se retorna la que se volviera si a la espera estoy gracias",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "hola buenas tardes el banco y me preguntaba si cuál sería el procedimiento para solicitar una domiciliación bancaria sobre mi papá es porque no tengo tiempo para estar autorizando y bueno básicamente preguntado que podría ser solamente para un tipo de",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "hola buenas un amigo me ha comentado algo sobre domiciliaciones bancarias me gustaría saber más del tema si me pudieras informar",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "quiero detener todas las transacciones en mi tarjeta",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "buenas he perdido mi tarjeta de crédito y me gustaría bloquear la tarjeta por favor",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "hola buenos días por favor quería congelar mi tarjeta lo más rápido posible la he perdido y necesito detener todas las transacciones y bloquearla cuanto antes muchas gracias",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "buenas estoy realizando una transferencia de una gran cantidad de dinero a otra cuenta corriente y me dijeron que recibiré un código de confirmación por SMS dada la gran cantidad de dinero que estoy traduciendo que tengo que hacer con este con este sms recibir un código en el que tengo que confirmar el la transacción gracias",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "hola buenas si me la compré un carnet de alto precio y",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "quisiera hacer un pago más grande de lo normal y lean las instrucciones dice que el banco me ha mandado un mensaje de texto entonces que necesito saber qué hago con información que recibe la mensaje de texto después de recibir",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "hola buenas tardes cómo configurar una cuenta conjunta",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "una cuenta conjunta con mi mujer cómo hacerlo con ayuda para crearla",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "quisiera crear una cuenta conjunta con mi esposo entonces quería saber en qué parte de la aplicación puedo encontrar los opción",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "hola me gustaría ver mis últimas transacciones porque hay un pago que no reconozco y quiere investigarlo gracias",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "buenos días podría mostrarme mis últimas transacciones creo que hay un pago que no conozco muy bien su procedencia",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "quería ver mis últimas transacciones que hay un pago que no sé qué es",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "hola quería pagar una factura de mis gastos",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "quiero saber el importe de la factura que tengo que pagar",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "tengo que pagar una factura de un pago la factura de mi tarjeta de crédito pensé",
+    "intencion": "pay_bill"
+  }
+]
