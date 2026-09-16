@@ -13,9 +13,10 @@ from agente_voz.herramientas import herramientas
 from agente_voz.herramientas.autorizacion import AutorizacionError
 from agente_voz.herramientas.cliente_banco import ClienteBanco
 
-# "gemini-2.5-flash" es el ultimo Flash estable confirmado sin una API key real a mano;
-# revisar en https://aistudio.google.com si hay uno mas nuevo antes de usar esto en serio.
-MODELO_POR_DEFECTO = "gemini-2.5-flash"
+# "gemini-2.5-flash" quedo deprecado para cuentas nuevas (confirmado con un 404 real de
+# la API el 2026-09-16, que recomendaba pasar a "gemini-3.6-flash"). Revisar en
+# https://aistudio.google.com si aparecio uno mas nuevo antes de asumir que este sigue vigente.
+MODELO_POR_DEFECTO = "gemini-3.6-flash"
 
 NOMBRE_BANCO = "Banco Rio de la Plata"
 
