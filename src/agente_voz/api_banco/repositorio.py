@@ -28,6 +28,18 @@ async def obtener_movimientos(
     return [Movimiento(**dict(fila)) for fila in filas]
 
 
+async def obtener_tarjetas_de_cliente(pool: asyncpg.Pool, cliente_id: UUID) -> list[Tarjeta]:
+    filas = await pool.fetch(
+        """
+        SELECT t.* FROM tarjetas t
+        JOIN cuentas c ON c.id = t.cuenta_id
+        WHERE c.cliente_id = $1
+        """,
+        cliente_id,
+    )
+    return [Tarjeta(**dict(fila)) for fila in filas]
+
+
 async def obtener_movimiento(pool: asyncpg.Pool, movimiento_id: UUID) -> Movimiento | None:
     fila = await pool.fetchrow("SELECT * FROM movimientos WHERE id = $1", movimiento_id)
     return Movimiento(**dict(fila)) if fila is not None else None

@@ -90,6 +90,16 @@ def prueba_leer_cuentas_de_cliente() -> None:
     assert len(respuesta.json()) == 1
 
 
+def prueba_leer_tarjetas_de_cliente() -> None:
+    with TestClient(app) as client:
+        datos = _portal(client).call(_preparar_datos)
+        respuesta = client.get(f"/clientes/{datos['cliente_id']}/tarjetas")
+
+    assert respuesta.status_code == 200
+    assert len(respuesta.json()) == 1
+    assert respuesta.json()[0]["ultimos_4_digitos"] == "4242"
+
+
 def prueba_leer_movimiento_existente() -> None:
     with TestClient(app) as client:
         datos = _portal(client).call(_preparar_datos)

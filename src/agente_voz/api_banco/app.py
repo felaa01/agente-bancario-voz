@@ -38,6 +38,11 @@ async def leer_cuentas_de_cliente(cliente_id: UUID, pool: Pool) -> list[Cuenta]:
     return await repositorio.obtener_cuentas_de_cliente(pool, cliente_id)
 
 
+@app.get("/clientes/{cliente_id}/tarjetas")
+async def leer_tarjetas_de_cliente(cliente_id: UUID, pool: Pool) -> list[Tarjeta]:
+    return await repositorio.obtener_tarjetas_de_cliente(pool, cliente_id)
+
+
 @app.get("/cuentas/{cuenta_id}/movimientos")
 async def leer_movimientos(cuenta_id: UUID, pool: Pool, limite: int = 20) -> list[Movimiento]:
     return await repositorio.obtener_movimientos(pool, cuenta_id, limite)

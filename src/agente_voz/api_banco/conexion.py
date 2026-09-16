@@ -15,7 +15,9 @@ def _dsn() -> str:
 
 
 async def crear_pool() -> asyncpg.Pool:
-    return await asyncpg.create_pool(dsn=_dsn())
+    # Tamaño chico a proposito: Postgres esta limitado a max_connections=20
+    # (ver docker-compose.yml) y puede haber varios pools activos a la vez.
+    return await asyncpg.create_pool(dsn=_dsn(), min_size=1, max_size=5)
 
 
 _pool: asyncpg.Pool | None = None

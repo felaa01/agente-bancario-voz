@@ -10,6 +10,8 @@ requires-python = ">=3.12"
 dependencies = [
     "asyncpg>=0.31.0",
     "fastapi>=0.141.1",
+    "google-genai>=2.23.0",
+    "httpx2>=2.13.0",
     "pydantic>=2.13.5",
     "uvicorn>=0.53.0",
 ]
@@ -21,7 +23,6 @@ build-backend = "uv_build"
 [dependency-groups]
 dev = [
     "faker>=40.39.0",
-    "httpx2>=2.13.0",
     "mypy>=2.3.1",
     "pre-commit>=4.6.2",
     "pytest>=9.1.1",
