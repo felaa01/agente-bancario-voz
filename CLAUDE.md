@@ -155,12 +155,13 @@ Hecho:
   rioplatense. Modelo por defecto `gemini-3.6-flash` (`gemini-2.5-flash` quedó deprecado para
   cuentas nuevas; el 404 real de la API el 2026-09-16 recomendó este reemplazo, confirmado en
   free tier — revisar aistudio.google.com si aparece uno más nuevo).
-- Con esto, la semana 1 queda funcionalmente completa (esqueleto, autorización, backend, agente en
-  modo texto). 61 pruebas no-`en_vivo` pasando más las 2 `en_vivo` de `prueba_bucle_en_vivo.py`,
-  ya corridas con éxito contra Gemini real (2026-09-16).
+- Con esto, la **semana 1 queda cerrada** (esqueleto, autorización, backend, agente en modo
+  texto). 61 pruebas no-`en_vivo` pasando más las 2 `en_vivo` de `prueba_bucle_en_vivo.py`, ya
+  corridas con éxito contra Gemini real (2026-09-16). Cambio de modelo mergeado en
+  [PR #1](https://github.com/felaa01/agente-bancario-voz/pull/1).
 
 Próximo paso inmediato:
-- Arranca la semana 2 (RAG de políticas, evaluación de intención con MInDS-14, cliente simulado y
+- Arrancar la semana 2 (RAG de políticas, evaluación de intención con MInDS-14, cliente simulado y
   subconjunto de evaluación en el CI) — ver docs/plan-del-proyecto.md.
 
 Actualizá esta sección cada vez que se complete un hito.
