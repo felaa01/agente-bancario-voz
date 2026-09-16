@@ -27,3 +27,9 @@ bd-iniciar:
 
 bd-detener:
 	docker compose down
+
+sembrar:
+	uv run python -m agente_voz.api_banco.datos_sinteticos
+
+api:
+	uv run uvicorn agente_voz.api_banco.app:app --reload

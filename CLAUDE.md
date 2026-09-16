@@ -136,11 +136,18 @@ Hecho:
   [github.com/felaa01/agente-bancario-voz](https://github.com/felaa01/agente-bancario-voz)
   (público), acceso por SSH desde WSL.
 
+- `Sesion` y el decorador `@requiere_verificacion` con pruebas (autorización en el código, no en
+  el prompt). Backend bancario simulado completo: esquema SQL (`clientes`, `cuentas`, `tarjetas`,
+  `tarjetas` con solo los últimos 4 dígitos, `movimientos`, `disputas`), capa de acceso a datos
+  tipada con `asyncpg` (`bloquear_tarjeta` y `crear_disputa` idempotentes), datos sintéticos con
+  Faker (`es_AR`, el locale más cercano a Uruguay que existe) y servicio FastAPI con los
+  endpoints que van a usar las herramientas del agente. El agente todavía no le habla a esta API
+  por HTTP — eso es el próximo paso. 31 pruebas en total, corriendo contra Postgres real (local y
+  en CI, con un service container).
+
 Próximos pasos (semana 1):
-1. Sesión y decorador `@requiere_verificacion` con sus pruebas.
-2. Backend bancario simulado: esquema SQL de clientes, cuentas, tarjetas, movimientos y disputas;
-   datos sintéticos con Faker en español; servicio FastAPI.
-3. Loop del agente en modo texto escrito directamente con el SDK de Gemini (sin framework de
-   agentes todavía), con las seis herramientas y las sensibles protegidas.
+1. Loop del agente en modo texto escrito directamente con el SDK de Gemini (sin framework de
+   agentes todavía), con las seis herramientas (llamando a la API FastAPI por HTTP) y las
+   sensibles protegidas con `@requiere_verificacion`.
 
 Actualizá esta sección cada vez que se complete un hito.

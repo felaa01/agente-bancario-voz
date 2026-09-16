@@ -18,7 +18,11 @@ Semana 1 en curso. Por ahora está el esqueleto del repositorio:
 - Paquete `src/agente_voz/` con `uv`, tipado estricto (`mypy --strict`) y `py.typed`.
 - `ruff` (lint + formato) y `mypy` como hooks de `pre-commit`, más CI en GitHub Actions.
 - Base de datos local (PostgreSQL + pgvector) vía `docker-compose.yml`, con límite de memoria.
-- Todavía no hay agente, backend bancario simulado, RAG ni pipeline de voz — eso es lo que sigue.
+- `Sesion` y el decorador `@requiere_verificacion` (autorización aplicada en el código).
+- Backend bancario simulado: esquema SQL, capa de acceso a datos con `asyncpg`, datos sintéticos
+  con Faker y un servicio FastAPI (`api_banco/app.py`) con los endpoints que van a usar las
+  herramientas del agente.
+- Todavía no hay agente ni RAG ni pipeline de voz — eso es lo que sigue.
 
 ## Arquitectura
 
@@ -82,11 +86,14 @@ cd agente-bancario-voz
 cp .env.ejemplo .env    # completar GEMINI_API_KEY
 make instalar           # uv sync + hooks de pre-commit
 make bd-iniciar          # levanta PostgreSQL + pgvector
+docker compose exec -T bd psql -U agente_voz -d agente_voz < src/agente_voz/api_banco/esquema.sql
+make sembrar             # datos sinteticos con Faker (clientes, cuentas, tarjetas, movimientos)
+make api                 # levanta el backend FastAPI en http://127.0.0.1:8000
 make verificar           # lint, formato, tipos y pruebas (lo mismo que corre el CI)
 ```
 
 Objetivos disponibles del `Makefile`: `instalar`, `lint`, `formatear`, `tipos`, `pruebas`,
-`verificar`, `bd-iniciar`, `bd-detener`.
+`verificar`, `bd-iniciar`, `bd-detener`, `sembrar`, `api`.
 
 ## Presupuesto de recursos
 
@@ -97,7 +104,7 @@ Objetivo: el sistema completo en ejecución debe rondar los 3-4 GB, dentro de un
 | ------------------------------------ | ---------------- | ------------------ |
 | WSL2 (Ubuntu + Docker + todo)        | 5 GB (`.wslconfig`) | —                |
 | PostgreSQL + pgvector (`docker-compose.yml`) | 512 MB     | ~28 MB en reposo   |
-| Backend FastAPI                      | Por definir       | Todavía no existe  |
+| Backend FastAPI (`uvicorn`, proceso local, todavía sin contenedor) | Por definir | ~54 MB en reposo |
 | STT (faster-whisper) / VAD / TTS     | Por definir       | Todavía no existe  |
 | Observabilidad (Jaeger o Phoenix)    | Por definir       | Todavía no existe  |
 

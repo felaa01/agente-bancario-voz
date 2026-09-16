@@ -16,3 +16,26 @@ def _dsn() -> str:
 
 async def crear_pool() -> asyncpg.Pool:
     return await asyncpg.create_pool(dsn=_dsn())
+
+
+_pool: asyncpg.Pool | None = None
+
+
+async def inicializar_pool() -> None:
+    global _pool
+    _pool = await crear_pool()
+
+
+async def cerrar_pool() -> None:
+    global _pool
+    if _pool is not None:
+        await _pool.close()
+        _pool = None
+
+
+def obtener_pool() -> asyncpg.Pool:
+    if _pool is None:
+        raise RuntimeError(
+            "El pool de conexiones no fue inicializado (falta el lifespan de FastAPI)."
+        )
+    return _pool
