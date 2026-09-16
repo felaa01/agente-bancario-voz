@@ -33,3 +33,6 @@ sembrar:
 
 api:
 	uv run uvicorn agente_voz.api_banco.app:app --reload
+
+chat:
+	uv run --env-file .env python -m agente_voz.agente.cli
