@@ -22,12 +22,17 @@ Semana 1 completa, semana 2 en curso (RAG de políticas):
 - Backend bancario simulado: esquema SQL, capa de acceso a datos con `asyncpg`, datos sintéticos
   con Faker y un servicio FastAPI (`api_banco/app.py`) con los endpoints que van a usar las
   herramientas del agente.
-- Agente conversacional en modo texto contra Gemini (`agente/bucle.py`, `make chat`), con sus seis
+- Agente conversacional en modo texto contra Gemini (`agente/bucle.py`, `make chat`), con sus siete
   herramientas.
 - RAG híbrido de políticas: embeddings con `multilingual-e5-small` vía `fastembed` (ONNX
   cuantizado), tabla `politicas` en pgvector y búsqueda que combina texto completo en español con
   similitud vectorial (Reciprocal Rank Fusion). Falta escribir los documentos reales en
-  `datos/politicas/` y las evaluaciones de intención y conversaciones simuladas de la semana 2.
+  `datos/politicas/`.
+- Evaluación de intención (nivel 1) con MInDS-14 `es-ES`: arnés reanudable con reintentos y
+  backoff (`make evaluar-intenciones`), mapeo de las 14 intenciones a las herramientas del agente,
+  y una muestra estratificada de 42 ejemplos (3 por intención) en vez del dataset completo — el
+  free tier de `gemini-3.6-flash` da 20 llamadas **por día**, no por minuto, así que evaluar las
+  486 filas completas hubiera tomado semanas para un proyecto de portfolio.
 - Todavía no hay pipeline de voz (STT, VAD, TTS) — eso es la semana 3.
 
 ## Arquitectura
@@ -74,7 +79,7 @@ semana 2.
 | Tasa de tarea completada                    | —          | Pendiente          |
 | Violaciones de política                     | Cero       | Pendiente          |
 | Latencia de punta a punta (p95)             | A definir* | Pendiente          |
-| Precisión de intención (MInDS-14 es-ES)     | —          | Pendiente          |
+| Precisión de intención (MInDS-14 es-ES, muestra de 42) | —  | Pendiente (20 llamadas/día) |
 | Tasa de error de palabras (STT)             | —          | Pendiente          |
 | Comparación API (Gemini) vs modelo cuantizado | —        | Pendiente          |
 

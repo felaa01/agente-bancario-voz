@@ -176,14 +176,45 @@ Hecho:
   `ClienteBanco.obtener_cuentas` que ya traía el saldo, sin tocar el backend). Surgió al preparar
   la evaluación de intención con MInDS-14: "balance" es el intent más frecuente del dataset y no
   teníamos ninguna herramienta que lo resolviera.
+- **Bug real encontrado y arreglado en `agente/bucle.py`:** `google.genai.Client.__del__` cierra
+  el cliente HTTP interno cuando el objeto se recolecta como basura. `Agente.__init__` guardaba
+  `self._chat` pero no una referencia al `Client` en sí, así que se recolectaba apenas terminaba
+  el constructor y rompía la conversación en la segunda llamada (`send_message` con el resultado
+  de una herramienta) en adelante. Ninguna prueba en vivo anterior lo agarraba porque ninguna
+  completaba una llamada real a herramienta de punta a punta. Fix: `self._cliente = genai.Client(...)`.
+  Prueba de regresión: `prueba_el_agente_completa_una_llamada_a_herramienta_de_punta_a_punta`.
+- **Evaluación de intención (nivel 1) con MInDS-14 `es-ES`** (`src/agente_voz/evaluaciones/`):
+  - `dataset_intenciones.py` descarga (transcripción, intención) vía la API REST de
+    `datasets-server` de HuggingFace en vez de la librería `datasets` (evita pyarrow y compañía
+    solo para leer texto). Cacheado en `evaluaciones/intenciones/minds14_es.json` (486 filas).
+  - `mapeo_intenciones.py`: mapeo a mano de las 14 intenciones a las siete herramientas o a
+    `fuera_de_alcance` (revisado contra ejemplos reales de cada clase, no una traducción literal).
+  - **Hallazgo importante:** el free tier de `gemini-3.6-flash` da **20 llamadas por día**, no por
+    minuto (`GenerateRequestsPerDayPerProjectPerModel-FreeTier`). Evaluar las 486 filas completas
+    hubiera tomado ~25 días. Decisión: muestra estratificada de 3 ejemplos por intención (42 en
+    total, `muestrear_estratificado`, semilla fija) en `evaluaciones/intenciones/muestra_es.json`,
+    consistente con que esto es un proyecto de portfolio, no busca cobertura exhaustiva.
+  - Marcar `Sesion.verificada` a mano no alcanza para que el modelo llame a las herramientas que
+    requieren verificación: el modelo no ve el estado interno de la sesión, solo la conversación.
+    Se sembró el historial del chat con un intercambio sintético de `verificar_identidad` ya
+    resuelto (`construir_historial_verificado` en `bucle.py`), sin gastar una llamada real en
+    repetir la verificación en cada uno de los 42 ejemplos.
+  - `ejecutar_intenciones.py` (`make evaluar-intenciones`): reanudable (guarda resultados en JSONL
+    a medida que corre), reintentos con backoff exponencial para 429/5xx transitorios, y corte
+    limpio (sin traceback) si la cuota diaria se agota, conservando lo ya procesado.
+  - Caveat documentado: `bloquear_tarjeta` (intención `freeze`) requiere `ultimos_4_digitos`, que
+    las transcripciones nunca mencionan. El agente correctamente pide ese dato en texto en vez de
+    llamar a la herramienta sin él, lo que hace bajar la métrica cruda para esa categoría sin que
+    sea un error real de intención.
 
 Próximo paso inmediato:
 - Escribir los 15-20 documentos reales de políticas en `datos/politicas/` (esto lo hace Juan, no
   Claude: define las respuestas "correctas" para toda la evaluación de después) y correr
   `make cargar-politicas` contra ellos.
+- Correr `make evaluar-intenciones` día a día (20 llamadas de cuota por día) hasta completar los
+  42 ejemplos de la muestra, y volcar los resultados en la tabla de evaluación del README.
 
-Después de eso, sigue el resto de la semana 2: evaluación de intención con MInDS-14, cliente
-simulado con los primeros escenarios y un subconjunto de evaluación corriendo en el CI — ver
-docs/plan-del-proyecto.md.
+Después de eso, sigue el resto de la semana 2: cliente simulado con los primeros escenarios y un
+subconjunto de evaluación corriendo en el CI — ver docs/plan-del-proyecto.md.
 
 Actualizá esta sección cada vez que se complete un hito.
