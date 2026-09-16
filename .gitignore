@@ -1,0 +1,33 @@
+# Secretos y configuracion local
+.env
+CLAUDE.local.md
+
+# Entornos virtuales
+.venv/
+venv/
+
+# Caches de Python y herramientas
+__pycache__/
+*.pyc
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+dist/
+build/
+
+# Audio generado o de prueba
+*.wav
+*.mp3
+*.ogg
+*.flac
+
+# Reportes y datos generados
+evaluaciones/reportes/
+
+# Editores y SO
+.vscode/
+.idea/
+.DS_Store

@@ -1,0 +1,2 @@
+# Forzar finales de linea LF para todos los archivos de texto, sin importar el SO de quien clone.
+* text=auto eol=lf
