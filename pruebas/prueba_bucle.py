@@ -7,6 +7,7 @@ from agente_voz.herramientas.cliente_banco import ClienteBanco
 
 NOMBRES_ESPERADOS = {
     "verificar_identidad",
+    "consultar_saldo",
     "obtener_movimientos",
     "bloquear_tarjeta",
     "abrir_disputa",
@@ -15,7 +16,7 @@ NOMBRES_ESPERADOS = {
 }
 
 
-def prueba_las_declaraciones_cubren_las_seis_herramientas() -> None:
+def prueba_las_declaraciones_cubren_las_siete_herramientas() -> None:
     (tool,) = _declaraciones_de_herramientas()
     declaraciones = tool.function_declarations
     assert declaraciones is not None
@@ -25,7 +26,7 @@ def prueba_las_declaraciones_cubren_las_seis_herramientas() -> None:
     assert nombres == NOMBRES_ESPERADOS
 
 
-def prueba_el_registro_cubre_las_seis_herramientas() -> None:
+def prueba_el_registro_cubre_las_siete_herramientas() -> None:
     assert set(_REGISTRO) == NOMBRES_ESPERADOS
 
 
