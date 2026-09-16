@@ -64,3 +64,26 @@ CREATE TABLE disputas (
 );
 
 CREATE INDEX idx_disputas_cliente_id ON disputas (cliente_id);
+
+-- RAG de politicas: cada fila es un fragmento de un documento de datos/politicas/.
+-- embedding usa multilingual-e5-small (384 dimensiones, ver rag/incrustaciones.py).
+-- busqueda_texto es una columna generada: Postgres la recalcula sola a partir de contenido,
+-- no hace falta mantenerla a mano al insertar o actualizar.
+CREATE EXTENSION IF NOT EXISTS vector;
+
+CREATE TABLE politicas (
+    id uuid PRIMARY KEY DEFAULT gen_random_uuid(),
+    documento text NOT NULL,
+    fragmento_indice int NOT NULL,
+    contenido text NOT NULL,
+    busqueda_texto tsvector GENERATED ALWAYS AS (to_tsvector('spanish', contenido)) STORED,
+    embedding vector(384) NOT NULL,
+    creado_en timestamptz NOT NULL DEFAULT now(),
+    UNIQUE (documento, fragmento_indice)
+);
+
+CREATE INDEX idx_politicas_busqueda_texto ON politicas USING gin (busqueda_texto);
+
+-- HNSW en vez de IVFFlat: no necesita un paso previo de entrenamiento con datos ya
+-- cargados, lo que conviene para una tabla chica (15-20 documentos) que se recarga seguido.
+CREATE INDEX idx_politicas_embedding ON politicas USING hnsw (embedding vector_cosine_ops);
