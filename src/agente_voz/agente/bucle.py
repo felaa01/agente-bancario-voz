@@ -174,6 +174,47 @@ _REGISTRO: dict[str, _EntradaHerramienta] = {
 }
 
 
+def construir_historial_verificado(
+    cedula: str, fecha_nacimiento: str, nombre_cliente: str
+) -> list[types.ContentOrDict]:
+    """Historial sintetico de una verificacion de identidad ya resuelta con exito.
+
+    Marcar `Sesion.verificada` a mano no alcanza para esto: el modelo no tiene forma de
+    ver el estado interno de la sesion, solo la conversacion. Si la sesion esta
+    verificada en el servidor pero el modelo nunca "vio" una verificacion exitosa, igual
+    va a pedir cedula y fecha de nacimiento de nuevo (paso correctamente cauteloso, pero
+    hace que este historial sintetico sea necesario para evaluar el resto de las
+    herramientas sin gastar una llamada real en repetir la verificacion cada vez).
+    """
+    return [
+        types.Content(role="user", parts=[types.Part(text="Hola")]),
+        types.Content(
+            role="model",
+            parts=[
+                types.Part.from_function_call(
+                    name="verificar_identidad",
+                    args={"cedula": cedula, "fecha_nacimiento": fecha_nacimiento},
+                )
+            ],
+        ),
+        types.Content(
+            role="user",
+            parts=[
+                types.Part.from_function_response(
+                    name="verificar_identidad",
+                    response={
+                        "resultado": f"Identidad verificada correctamente para {nombre_cliente}."
+                    },
+                )
+            ],
+        ),
+        types.Content(
+            role="model",
+            parts=[types.Part(text="Listo, ya verifique tu identidad. ¿En que te ayudo?")],
+        ),
+    ]
+
+
 class Agente:
     """Loop de herramientas escrito a mano contra el SDK de Gemini (sin framework de
     agentes). Una instancia = una sesion + una conversacion.
@@ -187,16 +228,26 @@ class Agente:
         pool: asyncpg.Pool | None = None,
         modelo: str | None = None,
         api_key: str | None = None,
+        historial_inicial: list[types.ContentOrDict] | None = None,
     ) -> None:
         self._sesion = sesion
         self._banco = banco
         self._pool = pool
+        # Util para evaluacion (nivel 1, MInDS-14): que herramientas intento llamar el
+        # modelo, en orden, sin importar si despues tuvieron exito o las rechazo la
+        # autorizacion. No se resetea entre turnos: acumula toda la conversacion.
+        self.herramientas_llamadas: list[str] = []
         clave = api_key or os.environ.get("GEMINI_API_KEY")
         if not clave:
             raise RuntimeError("Falta GEMINI_API_KEY (variable de entorno o parametro api_key).")
-        cliente = genai.Client(api_key=clave)
-        self._chat = cliente.aio.chats.create(
+        # Se guarda como atributo (no una variable local descartable): Client.__del__
+        # cierra el cliente HTTP subyacente cuando se recolecta como basura, y sin esta
+        # referencia eso pasaba a mitad de conversacion, rompiendo la segunda llamada en
+        # adelante en cuanto el modelo completaba una llamada a herramienta de verdad.
+        self._cliente = genai.Client(api_key=clave)
+        self._chat = self._cliente.aio.chats.create(
             model=modelo or os.environ.get("GEMINI_MODEL") or MODELO_POR_DEFECTO,
+            history=historial_inicial,
             config=types.GenerateContentConfig(
                 system_instruction=INSTRUCCION_DEL_SISTEMA,
                 # cast: el campo `tools` del SDK esta tipado como una union invariante
@@ -210,6 +261,7 @@ class Agente:
         if entrada is None:
             return {"error": f"Herramienta desconocida: {llamada.name}"}
 
+        self.herramientas_llamadas.append(llamada.name or "")
         argumentos = llamada.args or {}
         args_llamada: tuple[Any, ...] = (self._sesion,)
         if entrada.necesita_banco:

@@ -9,7 +9,7 @@ import datetime
 import asyncpg
 import pytest
 
-from agente_voz.agente.bucle import Agente
+from agente_voz.agente.bucle import Agente, construir_historial_verificado
 from agente_voz.agente.sesion import Sesion
 from agente_voz.herramientas.cliente_banco import ClienteBanco
 
@@ -50,3 +50,26 @@ async def prueba_el_agente_pide_verificacion_antes_de_dar_movimientos(
 
     assert not sesion.verificada
     assert "cedula" in respuesta.lower() or "identidad" in respuesta.lower()
+
+
+@pytest.mark.en_vivo
+async def prueba_el_agente_completa_una_llamada_a_herramienta_de_punta_a_punta(
+    pool: asyncpg.Pool, url_base_api: str
+) -> None:
+    """Regresion: Client.__del__ (google-genai) cierra el httpx interno cuando el
+    Client se recolecta como basura, y antes no guardabamos una referencia a el en
+    Agente. El sintoma solo aparece en el segundo send_message (el que manda el
+    resultado de la herramienta), asi que hace falta una conversacion que realmente
+    complete una llamada, no solo el primer turno.
+    """
+    await _crear_cliente(pool)
+    sesion = Sesion(id_sesion="s1")
+    sesion.marcar_verificada("00000000-0000-0000-0000-000000000000")
+    historial = construir_historial_verificado(CEDULA, FECHA_NACIMIENTO, "Cliente de prueba")
+
+    async with ClienteBanco(url_base_api) as banco:
+        agente = Agente(sesion, banco, historial_inicial=historial)
+        respuesta = await agente.enviar("Quiero saber mi saldo")
+
+    assert agente.herramientas_llamadas == ["consultar_saldo"]
+    assert respuesta.strip() != ""

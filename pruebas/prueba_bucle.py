@@ -73,3 +73,30 @@ async def prueba_ejecutar_buscar_politicas_no_necesita_banco() -> None:
     )
 
     assert "no tengo" in resultado["resultado"].lower()
+
+
+async def prueba_herramienta_desconocida_no_queda_registrada() -> None:
+    agente = _agente_de_prueba()
+
+    await agente._ejecutar_herramienta(types.FunctionCall(name="herramienta_inventada", args={}))
+
+    assert agente.herramientas_llamadas == []
+
+
+async def prueba_herramienta_conocida_queda_registrada_aunque_falle_la_autorizacion() -> None:
+    agente = _agente_de_prueba()
+
+    await agente._ejecutar_herramienta(types.FunctionCall(name="obtener_movimientos", args={}))
+
+    assert agente.herramientas_llamadas == ["obtener_movimientos"]
+
+
+async def prueba_las_llamadas_se_acumulan_en_orden() -> None:
+    agente = _agente_de_prueba()
+
+    await agente._ejecutar_herramienta(
+        types.FunctionCall(name="buscar_politicas", args={"pregunta": "algo"})
+    )
+    await agente._ejecutar_herramienta(types.FunctionCall(name="obtener_movimientos", args={}))
+
+    assert agente.herramientas_llamadas == ["buscar_politicas", "obtener_movimientos"]
