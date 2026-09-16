@@ -1,0 +1,26 @@
+services:
+  bd:
+    image: pgvector/pgvector:pg16
+    mem_limit: 512m
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-agente_voz}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-agente_voz}
+      POSTGRES_DB: ${POSTGRES_DB:-agente_voz}
+    # shared_buffers y max_connections reducidos: el limite de memoria del contenedor es 512 MB,
+    # muy por debajo del default de Postgres para max_connections (100 conexiones).
+    command: >
+      postgres
+      -c shared_buffers=128MB
+      -c max_connections=20
+    ports:
+      - "5432:5432"
+    volumes:
+      - datos_bd:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-agente_voz} -d ${POSTGRES_DB:-agente_voz}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  datos_bd:
