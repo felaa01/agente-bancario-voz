@@ -127,13 +127,20 @@ Hecho:
   24.04 como única distro WSL, `.wslconfig` aplicado (5 GB RAM / 8 GB swap para WSL), systemd
   activo, Docker Engine funcionando sin `sudo`, `uv` y `git` instalados y configurados. El
   repositorio vive en `~/proyectos/agente-bancario-voz` (filesystem de Linux, no `/mnt/c`).
+- Esqueleto del repositorio completo: paquete `src/agente_voz/` con `uv` (build backend nativo),
+  `ruff`, `mypy --strict` y `pytest` (con marcador `en_vivo`); `pre-commit` con hooks básicos +
+  ruff + mypy; `Makefile` con los objetivos en español; `docker-compose.yml` con PostgreSQL +
+  pgvector (512 MB, verificado con `docker stats`); CI en GitHub Actions (`uv sync --locked`,
+  lint, formato, tipos, pruebas); README con arquitectura, decisiones, evaluación (pendiente de
+  resultados), cómo correrlo local y presupuesto de recursos. Repo conectado y pusheado en
+  [github.com/felaa01/agente-bancario-voz](https://github.com/felaa01/agente-bancario-voz)
+  (público), acceso por SSH desde WSL.
 
 Próximos pasos (semana 1):
-1. Esqueleto del repositorio según los estándares de arriba, con el CI funcionando.
-2. Sesión y decorador `@requiere_verificacion` con sus pruebas.
-3. Backend bancario simulado: esquema SQL de clientes, cuentas, tarjetas, movimientos y disputas;
+1. Sesión y decorador `@requiere_verificacion` con sus pruebas.
+2. Backend bancario simulado: esquema SQL de clientes, cuentas, tarjetas, movimientos y disputas;
    datos sintéticos con Faker en español; servicio FastAPI.
-4. Loop del agente en modo texto escrito directamente con el SDK de Gemini (sin framework de
+3. Loop del agente en modo texto escrito directamente con el SDK de Gemini (sin framework de
    agentes todavía), con las seis herramientas y las sensibles protegidas.
 
 Actualizá esta sección cada vez que se complete un hito.
