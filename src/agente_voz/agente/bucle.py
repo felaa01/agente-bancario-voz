@@ -208,7 +208,9 @@ class Agente:
         respuesta = await self._chat.send_message(mensaje)
 
         while respuesta.function_calls:
-            partes_de_respuesta = [
+            # Anotado con el alias exacto de send_message: list[types.Part] no alcanza
+            # porque list es invariante (ver mypy si se saca esta anotacion).
+            partes_de_respuesta: list[types.PartUnionDict] = [
                 types.Part.from_function_response(
                     name=llamada.name or "",
                     response=await self._ejecutar_herramienta(llamada),
