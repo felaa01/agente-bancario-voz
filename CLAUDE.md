@@ -141,13 +141,29 @@ Hecho:
   `tarjetas` con solo los últimos 4 dígitos, `movimientos`, `disputas`), capa de acceso a datos
   tipada con `asyncpg` (`bloquear_tarjeta` y `crear_disputa` idempotentes), datos sintéticos con
   Faker (`es_AR`, el locale más cercano a Uruguay que existe) y servicio FastAPI con los
-  endpoints que van a usar las herramientas del agente. El agente todavía no le habla a esta API
-  por HTTP — eso es el próximo paso. 31 pruebas en total, corriendo contra Postgres real (local y
-  en CI, con un service container).
+  endpoints que van a usar las herramientas del agente.
+- Cliente HTTP del agente hacia esa API (`herramientas/cliente_banco.py`, con `httpx2`) y las seis
+  herramientas (`herramientas/herramientas.py`): `verificar_identidad` (cédula + fecha de
+  nacimiento, sin decorador porque es la que verifica), `obtener_movimientos`, `bloquear_tarjeta`
+  y `abrir_disputa` (con `@requiere_verificacion`, y estas dos últimas piden un `confirmado: bool`
+  explícito antes de ejecutar — no alcanza con que el prompt lo pida), `buscar_politicas` (todavía
+  sin RAG: responde honestamente que no tiene la base cargada) y `derivar_a_humano` (funciona
+  incluso con la sesión bloqueada).
+- Loop del agente escrito a mano contra el SDK `google-genai` (`agente/bucle.py`, clase `Agente`),
+  con las seis herramientas declaradas como `FunctionDeclaration` y un CLI para chatear
+  (`make chat`, necesita `GEMINI_API_KEY` en `.env`). Persona: "Banco Río de la Plata", español
+  rioplatense. Modelo por defecto `gemini-2.5-flash` (confirmar en aistudio.google.com si hay uno
+  más nuevo antes de dar por sentado que sigue siendo el Flash vigente).
+- Con esto, la semana 1 queda funcionalmente completa (esqueleto, autorización, backend, agente en
+  modo texto). 61 pruebas no-`en_vivo` pasando (más 2 `en_vivo` en `prueba_bucle_en_vivo.py`,
+  todavía sin correr: falta cargar una `GEMINI_API_KEY` real en `.env` y probar una conversación
+  de punta a punta).
 
-Próximos pasos (semana 1):
-1. Loop del agente en modo texto escrito directamente con el SDK de Gemini (sin framework de
-   agentes todavía), con las seis herramientas (llamando a la API FastAPI por HTTP) y las
-   sensibles protegidas con `@requiere_verificacion`.
+Próximo paso inmediato:
+- Cargar `GEMINI_API_KEY` en `.env` y correr `uv run --env-file .env pytest -m en_vivo
+  pruebas/prueba_bucle_en_vivo.py` (o `make chat`) para validar el agente con Gemini real.
+
+Después de eso, arranca la semana 2 (RAG de políticas, evaluación de intención con MInDS-14,
+cliente simulado y subconjunto de evaluación en el CI) — ver docs/plan-del-proyecto.md.
 
 Actualizá esta sección cada vez que se complete un hito.
