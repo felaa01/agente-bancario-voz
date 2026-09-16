@@ -160,8 +160,26 @@ Hecho:
   corridas con éxito contra Gemini real (2026-09-16). Cambio de modelo mergeado en
   [PR #1](https://github.com/felaa01/agente-bancario-voz/pull/1).
 
+- **Semana 2, RAG de políticas: la plumbing está armada, faltan los documentos reales.** Tabla
+  `politicas` en pgvector (embedding vector(384) + columna generada `tsvector` en configuración
+  `spanish`, índices HNSW y GIN). Embeddings con `multilingual-e5-small` corridos con `fastembed`
+  (ONNX Runtime, sin PyTorch): el modelo no viene soportado nativamente en fastembed, así que se
+  registra a mano contra la conversión ONNX cuantizada (int8) de la comunidad en
+  `Xenova/multilingual-e5-small` (`rag/incrustaciones.py`). Búsqueda híbrida (texto completo +
+  vectorial) combinada con Reciprocal Rank Fusion en `rag/repositorio.py`. `rag/cargador.py`
+  (`make cargar-politicas`) lee los `.md` de `datos/politicas/`, los divide por párrafo y los
+  carga. `buscar_politicas` ya usa esto de verdad (antes era un stub que siempre decía que no
+  tenía la base conectada); si no hay pool o no aparece nada relevante, lo sigue diciendo en vez
+  de inventar. Pico de RAM medido del modelo de embeddings: ~505 MB de proceso completo (ver
+  README, sección de presupuesto de recursos).
+
 Próximo paso inmediato:
-- Arrancar la semana 2 (RAG de políticas, evaluación de intención con MInDS-14, cliente simulado y
-  subconjunto de evaluación en el CI) — ver docs/plan-del-proyecto.md.
+- Escribir los 15-20 documentos reales de políticas en `datos/politicas/` (esto lo hace Juan, no
+  Claude: define las respuestas "correctas" para toda la evaluación de después) y correr
+  `make cargar-politicas` contra ellos.
+
+Después de eso, sigue el resto de la semana 2: evaluación de intención con MInDS-14, cliente
+simulado con los primeros escenarios y un subconjunto de evaluación corriendo en el CI — ver
+docs/plan-del-proyecto.md.
 
 Actualizá esta sección cada vez que se complete un hito.
