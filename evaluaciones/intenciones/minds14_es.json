@@ -1,0 +1,1946 @@
+[
+  {
+    "transcripcion": "hola buenas a ver tengo un problema con vuestra aplicación resulta que quiero hacer una transferencia bancaria a una cuenta conocida",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "la aplicación no cargue el saldo de mi nueva cuenta",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "hola tengo un problema con la aplicación no carga y tampoco voy a quitar Gael saldo de mi cuenta nueva dice que la aplicación está siendo reparada y ahora no puedo acceder a mi cuenta necesito inmediatamente",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "hola buena la aplicación no se carga el saldo de mi cuenta nueva y sí que la voy a decir está siendo reparado y yo no puedo acceder a mi cuenta",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "bueno pues resulta que la aplicación no se actualiza cuando cuando he introducido saldo de la nueva cuenta y me dice que ahora mismo no está disponible que no puedo acceder a mi cuenta",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "hola buenos días verás es que no puedo acceder a mi cuenta la aplicación no funciona bien no sé qué pasa que intento meterme en mi saldo y demás pero no no carga no funciona",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "hola tengo problema con la aplicación",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "hola buenos días quería informar porque no me funciona la app del banco si dice que no me carga si vale vale muchas gracias",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "intentando acceder a la aplicación de cargar correctamente",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "tengo un problema cuando entra en la aplicación no puedo ver los últimos movimientos de mi cuenta",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "hola estoy utilizando la aplicación del banco y no funciona más que le doy no carga ni muestra el saldo ni cuenta me dejas teléfono tracción cómo podría solucionarlo",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "buenos días estoy teniendo problemas para acceder a la aplicación de mi cuenta bancaria la aplicación no carga me podrían indicar alguna solución",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "dice que la aplicación está siendo reparada y ahora no puedo acceder a mi cuenta",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "la aplicación móvil del banco no funciona correctamente",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "intentó abrir la aplicación pero se cierra automáticamente",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "mira tengo una aplicación instalada en mi móvil y te intentan hacer el saldo de mi cuenta en pero la aplicación no me funciona correctamente no se carga ningún momento",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "hola buenas quiero utilizar la aplicación del banco pero no consigo que funcione en condiciones no sé si es que está en mantenimiento o tengo algún problema yo me podrías ayudar",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "tengo un problema con la aplicación del móvil",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "estoy tratando de acceder a mi cuenta de banco y la aplicación no está cargando correctamente no me enseñan no me está enseñando la información que necesito",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "hola enciende la aplicación y me da error no sé que puede pasar",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "buenos días quería mirar cuánto tenía en el banco con la aplicación del móvil y no me funciona pero sabe si está bloqueada o algo",
+    "intencion": "app_error"
+  },
+  {
+    "transcripcion": "hola buenos días soy cliente del banco y les llamo por favor para que bloqueen mi tarjeta",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "hola buenos días mira llamaba porque quería hacer un bloqueo de mi tarjeta congelar todos los movimientos hasta nueva orden es posible",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "por favor quiero bloquear mi tarjeta",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "hola buenos días me gustaría congelar mi tarjeta ya que últimamente he estado que han estado realizando unos pagos en mi nombre que no son míos",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "hola quería bloquear una tarjeta de crédito por favor",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "hola quería congelar mi tarjeta bloquearla por completo por favor",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "quiero congelar mi tarjeta bancaria",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "necesito bloquear mi tarjeta",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "necesito que me bloqueen mi tarjeta",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "hola me gustaría tener todas las transiciones en mi tarjeta y quisiera congelarla y bloquearla",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "necesito que tener todas las transacciones de mi tarjeta dejarla bloqueada",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "hola buenos días es que me gustaría cancelar la tarjeta terminada en 47 porque es que me acaban de robar pero quiero darla de baja quiero cancelarlo ahora mismo gracias",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "buenos días he perdido la cartera y que me gustará congelar mi tarjeta por favor",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "quería bloquear mi tarjeta por favor",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "hola buenos días me han robado la tarjeta y quisiera congelarla para que no la puedan utilizar hasta gracias",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "he tenido un problema con mi tarjeta no la encuentro y quiero bloquear todas las transacciones",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "hola buenas he perdido mi tarjeta de crédito me gustaría si pudierais por favor congelarla para que se vengan todas las transacciones gracias",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "hola buenos días por favor quería congelar mi tarjeta lo más rápido posible la he perdido y necesito detener todas las transacciones y bloquearla cuanto antes muchas gracias",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "buenos días mire lo siento comunicarles pero acabo de perder la tarjeta de vuestra compañía y quiero bloquear lado de tenerla lo antes posible por favor para que no haga nadie uso de ella por favor hacérmelo a la mayor brevedad posible muchas gracias",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "hola buenos días mira te ha llamado porque tenía un problema y me han robado la cartera y me gustaría bloquear todas mis tarjetas",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "hola buenas llamaba para preguntar si por cómo puedo congelar mi tarjeta porque la quiero bloquear he perdido la tarjeta y así sea alguna otra manera de tener todas las transacciones que se hayan hecho con mi tarjeta",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "buenas he perdido mi tarjeta de crédito y me gustaría bloquear la tarjeta por favor",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "hola buenas pues resulta llamada porque resulta que he perdido mi tarjeta me gustaría congelarla por favor",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "perdí mi tarjeta entonces necesito bloquearla para poder detener corazón sesiones en mi tarjeta cómo puedo hacer eso",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "hola buenos días nada yo me voy porque tuve un problema con mi tarjeta y que la extravié y quería bloquear totalmente las transacciones que se pueden realizar con esta",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "quería que pudieran caer congelar mi tarjeta a ser posible bastante pronto porque he perdido la cartera y tenía toda mi tenía mi tarjeta quiero congelarlas para que no puedan usarla para sacar dinero",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "quiero que se bloqueé en mi tarjeta de crédito por algún problema",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "quiero detener todas las transacciones en mi tarjeta",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "buenas llamado para preguntar porque me van a coger la tarjeta cuando realmente no ha habido ningún motivo porque siempre todo se ha realizado de forma correcta todo está en orden entonces me gustaría que me respondieran a porque ya no puedo trabajar con la tarjeta",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "hola buenos días llamaba porque quiero bloquear mi tarjeta ya que no quiero volver a usar muchas gracias",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "hola buenos días a ver me gustaría bloquear mi tarjeta para no poder hacer más transacciones",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "Avast bloquea mi tarjeta inmediatamente yo de tener todas las transiciones de mi tarjeta y congelarla",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "hola me gustaría bloquear mi tarjeta de crédito dado que la ha extraviado será posible dado que necesito detener todas las transacciones ya sean ingresos o transferencias o compras muchas gracias",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "detener todas las sangres en mi tarjeta de vida robo de la misma",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "mira acabo de perder mi tarjeta en la calle y quiero congelar para que no curres mucho",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "por favor bloquea mi tarjeta",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "tarjeta me bloquea favor por tarjeta me congelar tarjeta las",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "hola buenos días mira es que he perdido mi tarjeta y no sé dónde está y me gustaría bloquearla para que no se efectuarán pagos muchas gracias",
+    "intencion": "freeze"
+  },
+  {
+    "transcripcion": "tengo que hacer una factura tengo que pagar una factura lo voy a hacer pagando con mi banco directamente",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "tengo que realizar el pago de la factura",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "tengo que pagar una factura de un pago la factura de mi tarjeta de crédito pensé",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "tengo que pagar una factura",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "hola mira llamo quiero hacer un pago la factura está mente",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "hola buenos días mira es que tengo que pagar una factura y me gustaría saber cómo poder hacerlo gracias",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "hola necesito pagar una factura pero no sé cómo realizar el pago me puede decir en qué parte de la aplicación puedo ir para pagar la factura pendiente",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "hola buenos días tengo una factura pendiente de pagar y me gustaría realizar el pago como podrían ayudarme gracias",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "hola tengo una factura que debo pagar ya cuanto antes he intentado ya varias veces poder pagarlo con mi tarjeta",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "hola buenos días tengo una factura por pagar",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "buenos días bueno resulta que tengo un problema y es que tengo que pagar una factura",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "necesito pagar la factura de la luz",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "buenas quieres avisar el pago de la factura por favor",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "tengo que pagar esta factura",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "tengo que pagar una factura y me gustaría saber cómo hacerlo",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "tengo que pagar una factura la factura de mi tarjeta de crédito vence",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "quiero saber el importe de la factura que tengo que pagar",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "quiero realizar un pago de factura",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "hola tengo que pagar una factura me gustará realizar un pago la factura de mi tarjeta de crédito vence",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "hola buenas tengo esta factura que tengo que pagar cómo lo hacemos",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "tengo que pagar una factura",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "buenos días llamaba para realizar el pago",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "hola quería pagar una factura de mis gastos",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "me gustaría pagar esta factura con mi tarjeta si es posible aquí tengo los datos de la factura y me gustaría realizar este pago",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "hola tengo que pagar una factura y me gustaría saber",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "quisiera realizar el pago de una factura",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "tengo que pagar la factura del gas",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "tengo que pagar una factura",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "hola buenos días mira tengo que pagar una factura y quería saber si podría hacerlo con la tarjeta o cómo podría realizar el pago si hay alguna opción más sencilla y no se quita un comprobante de la operación",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "tengo que pagar una factura realizar un pago la factura de mi tarjeta de crédito vence",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "quería preguntar sobre cómo se puede pagar una factura",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "tengo que pagar una factura tarjeta de crédito gracias",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "hola buenos días quiero pagar una factura tengo que realizar el pago correspondiente a una factura que tengo pendiente por favor",
+    "intencion": "pay_bill"
+  },
+  {
+    "transcripcion": "hola buenas me voy de vacaciones a Estados Unidos y me gustaría saber qué tengo que hacer para pagar cuando esté allí",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "hola buenas quería saber si mi tarjeta del banco funciona en el extranjero también",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "necesito mi tarjeta en extranjero puedo pagar cosas cuando estoy en Estados Unidos",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "hola quería saber si podía pagar con mi tarjeta en el extranjero puedo usarla",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "hola buenos días mira me voy a ir un par de semanas ahora de vacaciones a Nueva York y necesitaba saber si la tarjeta que tengo actualmente voy a poder utilizarla allí en el en el extranjero que no estoy seguro muchas gracias",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "a ver me gustaría saber si mi tarjeta funciona la del extranjero la semana que viene",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "una persona que quiere una tarjeta y pregunta si puede pagar las cosas cuando está en otro país y por si tiene que hacer algo antes de irse de vacaciones",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "buenas tengo una tarjeta de crédito con su banco y me gustaría saber que funcionar el extranjero porque me voy de vacaciones semana que viene gracias",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "hola buenas tardes quiero saber las condiciones de la tarjeta en el extranjero por ejemplo en estos",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "hola buenas tardes necesitaba saber si necesito hacer algún cambio en mi tarjeta para usarla en el extranjero porque voy a viajar a los Estados Unidos próximamente y si tengo que hacer alguna gestión para que activarla gracias",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "funcionará la tarjeta que ya tengo en el extranjero",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "hola buenos días a ver el motivo de mi llamada era para preguntar si es posible usar mi tarjeta en el extranjero y si es posible si tiene algún tipo de corte de comisión etcétera",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "hola buenas quería saber si podía utilizar mi tarjeta de débito del Banco en el extranjero",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "hola buenos días me gustaría saber si mi tarjeta es operativa en otros países que no sea España porque es que voy a ir de vacaciones a Estados Unidos y tengo que hacer algún procedimiento o algo para poder estar allí",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "hola quería saber si es que con mi tarjeta que tengo del banco la puedo usar en el extranjero",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "hola buenos días me voy de vacaciones el próximo mes una semana ser extranjero y me gustaría saber si podría sacar dinero con mi tarjeta de crédito",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "en la próxima semana tengo pensado hacer un viaje a Estados Unidos por temas de trabajo y necesito quitar de aquí 4 días y mi tarjeta SIM y tarjeta de banco van a servir allí aquí en casa cuando contrario que trámite pertinente vocalizar para poder usar allí el dinero",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "me iba de viaje a Estados Unidos en Albacete",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "hola buenos días verás si cliente de vuestro banco y quería saber si mi tarjeta funciona en el extranjero en Europa voy a ir hacer unas vacaciones dentro de poco y es importante saberlo gracias",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "hola buenos días llamaba porque me voy a ir de viaje al extranjero y ya estar varias semanas y quería saber si podía utilizar mi tarjeta os tengo que hacer a un chico de gestión para poder utilizarla en el extranjero",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "voy a realizar un viaje al extranjero y me gustaría saber si puedo usar allí mi tarjeta de crédito",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "hola buenos buenos días mira quería saber si mi tarjeta si podría utilizar la tarjeta de mi banco para pagos en el extranjero sí sin que me cobren comisiones ni nada por el estilo",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "buenos días en las próximas semanas voy a estar viajando en el extranjero y quisiera saber si mi tarjeta va a funcionar ahí o si necesito hacer algún paso más para que no me bloquean la tarjeta cuando estés de vacaciones",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "necesito mi tarjeta en el extranjero puedo pagar cosa cuando estoy en Estados Unidos",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "hola buenas mira llamaba porque tengo una tarjeta de crédito vuestra y quería saber si podía hacer compras en el extranjero con ella como viaje",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "buenos días me gustaría saber si puedo hacer con la tarjeta que tengo actualmente contratada me gustaría saber si puedo hacer transacciones fuera fuera de mi país ya que me voy de vacaciones un tiempo y lo necesito saber para poder sacar dinero en efectivo o tranquilamente con mi tarjeta de crédito",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "hola buenas tardes mira tengo una tarjeta de crédito con su banco y me gustaría saber si puedo pagar en el extranjero con ella ya que estoy planteando irme",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "buenas me gustaría saber si puedo pagar en extranjero ya que me voy a ir de viaje una semana y quería saber si puedo pagar allí con mi tarjeta",
+    "intencion": "abroad"
+  },
+  {
+    "transcripcion": "me gustaría cambiar la dirección actual por otra nueva",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola bueno llama quería cambiar mi dirección de la tarjeta",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola buenos días vivo en la calle 2385 de Blue y me gustaría cambiar mi dirección gracias",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola llamaba para ver si podía cambiar la dirección postal de la domiciliación bancaria",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola que ya también mi dirección en el banco porque me he mudado aunque cambio de dirección",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola buenas noches mira tengo una cuenta y bueno tengo una dirección asociada y por lo que me gustaría cambiar la dirección que tengo asociada a dicho cuántas que posible",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola buenas tardes le llamaba porque quería cambiar mi dirección y quería saber cuál es el trámite a seguir para realizar el cambio de dirección",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola quiero cambiar dirección",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "pues alguien que quiere cambiar la dirección que tiene enlazada con la cuenta de su banco",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola buenos días llamaba porque quiero cambiar mi dirección ya tiene mudado y quiero recibir correspondencia mi nuevo domicilio muchas gracias",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola quiero cambiar mi dirección de residencia por favor",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "buenos días quería cambiar mi dirección para lo de la",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "quiero cambiar mi dirección",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola mi morado y mi dirección",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola necesito cambiar mi dirección de domicilio",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola quiero cambiar mi dirección",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola llamaba porque quiero cambiar la dirección",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola llamada porque me gustaría cambiar mi dirección que aparece en mi cuenta dado que mirando la cartilla y me ha dado cuenta que tenéis mi dirección pasada de manera que no me llegaban los las cartas a mi domicilio actual gracias",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola buenos días mire le llamo porque recientemente me he comido de casa y me gustaría cambiar la dirección que está asociada a mi cuenta",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "quiero cambiar mi dirección",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "solicitud de cambio de dirección",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola buenos días soy cliente del banco y le llamaba porque quiero cambiar mi dirección en los datos personales que guardan míos gracias",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola buenos días mira le llamaba porque quería cambiar la dirección que está asociado a mi cuenta y quería saber si es posible realizarlo por Internet o tengo que hacerlo por teléfono",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola buenas tardes mira llamaba porque me interesaría cambiar mi dirección",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola buenos días quiero cambiar mi dirección de mi tarjeta porque ha habido un cambio de domicilio si les cariño informar de este nuevo cambio para que esté configurada en mis datos por favor tengan en cuenta esta información sobre mi luego sobre el mi nuevo hogar donde voy a vivir gracias",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola me he mudado y quería cambiar mi dirección postal muchas gracias",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "quiero cambiar mi dirección",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola buenas y llamaba para subir a cambiar dirección",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola buenos días mire me he cambiado de domicilio y quería que cambiar a mi dirección",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "mi dirección quiero cambiar mi dirección",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "quisiera cambiar mi dirección por favor",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola quiero cambiar mi dirección por otra diferente",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "buenas tardes quiero cambiar mi dirección",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "quiero cambiar mi dirección postal por favor",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola buenos días le llamo para cambiar mi dirección ya que recientemente me he mudado y quisiera tener la documentación actualizada y agradecería me indica se los trámites a seguir",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola buenos días a ver el motivo de mi llamada es porque me gustaría cambiar mi dirección de la base de datos",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "buenos días me gustaría cambiar mi dirección en los datos del banco",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola buenos días tengo un problema y es que recientemente me he mudado entonces me gustaría cambiar mi dirección antigua por la actual",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola buenos días mire estoy de mudanza y necesitaba cambiar la cambia la dirección keldagrim está directa",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola buenos días mira es que me cambio de domicilio y quería cambiar la dirección pero estoy mirando a través de la aplicación y a través de la página web pero no encuentro la forma de realizarlo me podías dar algo más información para hacer el cambio o tengo que ir allí a la oficina a llevar algún papel o algo",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "hola buenos días quiero añadir mi dirección",
+    "intencion": "address"
+  },
+  {
+    "transcripcion": "idiota ver cuánto dinero puede sacar de un cajero automático",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "hola buenas tardes voy a salir ahora a sacar a sacar dinero a un cajero que está hecho lo de mi casa pero me preguntaba cuánto es la cantidad máxima que puedo sacar",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "cuál es el límite en el cajero automático",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "buenas quisiera saber cuánto dinero puedo retirar del cajero automático",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "buenos días me gustaría consultar el límite de dinero que puedo sacar al día en el cajero y si lo puedo aumentar para así no tener que repetir la acción en distintos días",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "hola buenos días me gustaría saber cuál es la cantidad máxima que puedo retirar de una vez en un cajero y",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "hola buenas si estoy en el extranjero y quiero retirar dinero del cajero automático cuál es la cantidad máxima que tengo de retirada lo digo porque voy a hacer un viaje a Estados Unidos y necesito saberlo",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "cuál es el máximo que puedo retirar del cajero automático",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "iba a retirar dinero del cajero y quería saber cuál es la cantidad máxima de dinero que puedo retirar",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "hola buenas mira me estaba interesado en sacar dinero en un cajero pero me preguntaba cuál es el límite máximo que puedo retirar",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "hola buenas esta tarde iba a retirar dinero del cajero automático pero no sabía exactamente la cantidad límite que se puede retirar me podríais confirmar cuál es esta",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "hola buenos días Isabel mira tengo una pregunta quería saber cuál es mi límite de retiro de dinero en cajeros automáticos y si sería posible cambiarlo cambiar el máximo dependiendo de cual sea esto",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "hola buenos días una pregunta cuál es la cantidad máxima de dinero que yo puedo retirar al día en la aplicación el salen en mi cuenta y ese que ese límite se podría aumentar o no",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "quiero sacar dinero del cajero automático y no sé cuánto es la cantidad máxima que puedo sacar me lo pueden decir",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "cuál es mi límite de en el cajero automático",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "hola buenos días quisiera hacer una consulta sobre límite que puedo retirar en un cajero automático y si puedo aumentarlo y cuánto podría retirar como máximo gracias",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "hola llamaba para preguntar cuánto es el máximo dinero que puedo retirar del cajero y porque me hace falta retirar una gran cantidad dinero y era por si podía retirar toda la que tengo en el banco",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "cuál es el límite en el cajero automático puedo meter mi límite de retiro en el cajero automático cuánto dinero puedo retirar",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "para sacar dinero del cajero automático hasta qué cantidad puedo retirar",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "hola me gustaría saber cuál es el límite del cajero automático",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "hola buenos días hija porque quiero retirar una gran cantidad de dinero en un cajero y me gustaría saber cuál es el límite para sacar dinero muchas gracias",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "sacar una cantidad está grande del cajero el querría saber el límite que tiene y si se podría ampliar",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "cuál es el límite de retiro en cajero automático puedo aumentar sé",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "hola te voy a sacar dinero del cajero automático pero no sé cuál es el límite me puede decir cuánto dinero puedo retirar cuál es la cantidad máxima",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "una calle que no conozco y he visto que hay un cajero automático de su compañía quiero retirar bien lo he dicho pero no sé cuál es la cantidad máxima que me lo puede decir",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "hola quería retirar dinero de Zaragoza",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "hola buenos días soy cliente de vuestro banco me gustaría saber cuánto dinero puedo retirar de una vez y cuál es el saldo de mi de mi cuenta bancaria gracias",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "buenas tardes me gustaría saber cuál es la cantidad máxima de dinero que puedo retirar de un cajero automático",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "buenos días me gustaría saber cuánto dinero se puede retirar en un cajero automático",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "hola buenos días resulta que voy a tener que hacer en un rato una compra grande pero la quiero pagar en efectivo tengo la duda cuál es el límite de dinero que puedo sacar el cajero",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "quería saber cuánto es el límite para sacar con mi tarjeta en el cajero automático",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "hola llamo porque quería saber cuál es el límite de dinero que puedo sacar del cajero automático y si hay alguna manera de aumentarlo gracias",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "buenos días necesito retirar dinero de mi cuenta a partir de mi tarjeta y estaba a punto de ir al cajero automático y me preguntaba cuál es el límite de cantidad de dinero que puedo retirar en una única operación",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "cuál es el límite de dinero que puedo retirar del cajero automático",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "buenas me gustaría saber cuál es el límite de dinero que puedo sacar en un cajero automático y si podría aumentarlo en algún momento",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "puedo sacar 1000 € del cajero automático o hay algún límite",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "cuánto es el dinero máximo que puedo retirar de un cajero automático",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "hola buenas llamado para preguntar cuánto puedo sacar del cajero automático es decir si tengo algún límite y cómo podría cambiar el límite",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "hola buenos días estaba aquí retirando dinero de mi cajero automático y quería saber cuál es la cantidad máxima que puedo retirar de dinero quería saber hasta cuánto dinero puedo sacar por favor necesito que me proporcione esta información para poder continuar con las gestiones tengo un poco de prisa por favor gracias",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "hola a ver me gustaría saber cuál es la cantidad máxima de dinero que puedo yo retirar de vuestro cajero automático gracias",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "hola buenas mira te llamo porque quiero sacar dinero del cajero y necesito una cantidad alta y no sé si puedo sacar esta cantidad tengo un límite para sacar",
+    "intencion": "atm_limit"
+  },
+  {
+    "transcripcion": "quiero hacer una cuenta conjunta y me gustaría tener información",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "buenos días quería hablar con mi banco virtual estamos quiero crear una cuenta conjunta junto con un familiar y quería saber cómo se hace por favor cómo se puede hacer para que crear una cuenta conjunta con un socio gracias",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "me gustaría crear una cuenta con un amigo cómo se hace",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "hola quería crear una cuenta conjunta con mi pareja y no sé cómo puedo hacerlo puede ser que se puede hacer a través de la aplicación no tendría que hacerlo con vosotros",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "cómo configurar una cuenta nueva puedo tener una cuenta con mi socio en qué parte dela Biblia se encuentra la opción de una cuenta conjunta",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "una cuenta conjunta con mi mujer cómo hacerlo con ayuda para crearla",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "hola buenas tardes cómo configurar una cuenta conjunta",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "hola buenas mira llamada porque es que acabo de abrir una empresa con un compañero mío de la Universidad y pues estamos hablando sobre una cuenta conjunta ustedes nos lo pueden tramitar o hay que llamar para pedir más información o o cómo lo hacemos muchas",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "hola quería saber si puedo tener una cuenta con otra persona más",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "hola buenas estaba interesado en una cuenta del Banco como está compañía ya que un socio me ha comentado que trabajas muy bien estoy interesado en abrir una cuenta conjunta",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "hola buenas mi socio y yo queríamos crear una cuenta conjunta si podrías ayudarnos a crearla",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "hola buenos días me gustaría tener una cuenta conjunta con mi compañero y quería saber cómo realizar la",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "soy un accidente de otro tengo una tarjeta contratada y me preguntaba si podría configurar una nueva cuenta en el banco pero de manera conjunta con mucha presión puedo hacerlo yo por mi cuenta en Internet que tengo que ir alguna vez o me la puedo hacer",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "me gustaría crear una cuenta conjunta con mi pareja pero no encuentro la opción en vuestra aplicación",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "me gustaría saber cómo configurar una cuenta conjunta con otra persona puedo tenerla con mi socio es que no encuentro en la aplicación dónde se halla la opción para crearla",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "me gustaría quedarme una cuenta conjunta con mi pareja dónde puedo configurar la secuaces de la tetera explicación de la banca online",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "cómo puedo configurar la cuenta conjunta",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "hola buenos días me gustaría abrir una cuenta conjunta con mi pareja y no tengo claro cuál es el procedimiento podrán ayudarme gracias",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "hola buenos días mira estaría interesado en cómo puedo configurar una cuenta conjunta para una empresa entonces iríamos dos personas no sé si yo quería un poco más de información",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "hola buenas llamado para preguntar cómo podría crear una cuenta conjunta con un socio o si se puede tener una cuenta conjunta con un socio y también en casa de que si desde la aplicación dónde podría mirarlo",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "cómo configuro una cuenta conjunta",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "hola buenos días mira quisiera abrir una cuenta conjunta con mi socio pero no sé exactamente dónde tengo que hacerlo me podría informar sobre dónde lo puedo localizar",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "hola buenos días me gustaría saber la manera para poder configurar una cuenta conjunta con otra persona le pica son pareja tenemos un pequeño negocio y gustaría bueno que podamos utilizar la misma cuenta ambos desde la aplicación no encuentro la opción me gustaría que me ayudaste",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "buenas le llamaba porque él quería abrir una cuenta conjunta con mi pareja y entonces buenas necesito saber cómo se hace la gestión si hay que ir a la entidad o si se puede hacer a través de la aplicación online",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "quisiera crear una cuenta conjunta con mi esposo entonces quería saber en qué parte de la aplicación puedo encontrar los opción",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "en qué parte de la aplicación se encuentra la opción de una cuenta conjunta como como la configura",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "en qué parte de la aplicación se encuentra la opción para crear una cuenta conjunta",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "me gustaría crear una cuenta nueva con mi pareja qué pasos tengo que hacer",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "hola buenas me gustaría abrir una cuenta conmigo y con un socio",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "hola buenas me gustaría crear una cuenta conjunta para usarla con otra persona y quiero saber cómo se configura con cuántas personas puedo tenerla y demás",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "hola buenas pues mira llamaba porque me gustaría realizar una cuenta conjunta como podrías configurarla",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "hola buenos días necesitaba ayuda para configurar una cuenta conjunta ya que me gustaría crear una con mi pareja aparte de la que ya tengo yo en virtualmente y no sé si tengo que ir a la oficina o lo puedo hacer directamente desde la aplicación de la banca",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "hola me gustaría abrir una cuenta conjunta pero no sé como configurarla me puede decir en qué parte de la aplicación puedo abrir una cuenta conjunta",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "es posible crear una cuenta con otra persona",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "quiero abrir una cuenta conjunta con mi mujer",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "me gustaría crear una cuenta conjunta con un con mi pareja y quería conocer en dónde puedo realizar la en la web bancaria porque he estado mirando las opciones de cuentas y no encuentro la ubicación de la pestaña dónde puedo seleccionar cuenta conjunta y continuar con su creación muchas gracias",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "Ono y hacer una cuenta y con otra persona los dos podamos acceder a la cuenta de que quería saber cómo podría hacer esto y la aplicación imputan quedar para conectar una cuenta a la que podamos hacer los dos",
+    "intencion": "joint_account"
+  },
+  {
+    "transcripcion": "hola buenas llamada porque quiero ver el saldo de mi cuenta corriente así que por favor muestren me el saldo que tengo en mi cuenta corriente",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola me gustaría saber el saldo que tengo la cuenta corriente que tengo contrato",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola buenas llamaba para saber si me podrías decir el saldo que tengo actualmente en la cuenta",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "muéstrame el saldo de mi cuenta",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "buenos días llamaba para saber el saldo de mi cuenta corriente",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola quería saber el saldo de mi cuenta por favor",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola quiero saber el saldo disponible en mi cuenta",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola buenas tardes en este momento no puedo entrar en mi cuenta online por tanto usted me podría decir cuál es mi saldo en este momento muchas gracias",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "buenos días quería saber cómo puedo consultar el saldo",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola me puedes mostrar el saldo de mi cuenta bancaria por favor",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola bueno he tenido un problema con la aplicación del móvil así que no he podido mirarlo pero me gustaría saber cuál es el saldo de mi cuenta y si me podríais enseñar cuánto tengo ahora mismo",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "buenos días quisiera saber el saldo de mi cuenta de mi cuenta corriente y cómo puedo conseguir conocerlo qué pasos tengo que seguir gracias",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "me gustaría conocer el saldo de mi cuenta corriente",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola buenas tardes en llamar porque estoy teniendo una habitación y me gustaría saber el saldo que tengo",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola llamo porque quiero saber cuánto saldo tengo en la cuenta corriente por favor gracias",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola llevaba ya que no puedo acceder a la aplicación del banco y me gustaría saber cuál es el saldo de mi cuenta",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola me gustaría consultar el saldo de mi cuenta",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "buenos días me gustaría saber el saldo actual de mi cuenta corriente así puedo saber la cantidad de ingresos y gastos que tengo mensualmente y organizarme mejor económicamente gracias",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola muy buenas me gustaría ver el saldo de mi cuenta corriente podría decirme lo que hay",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola buenos días mire les llamaba para preguntar sobre el saldo que tengo en mi cuenta porque había un problema con la aplicación y y no me aparece y quería consultarlo muchas",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "buenos días mira me gustaría saber cuál es el saldo en mi cuenta corriente a los que intentando mirar por la aplicación pero me está dando un problemilla",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola he tenido problemas para ver el saldo de la cuenta así que por eso ya",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola buenas tardes me llamo para venir con Daniel Pérez hablo de mi cuenta corriente que esto que lo intentamos jugar por internet pero no me contarás si podría llegar",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola buenos días llamaba porque quería saber el saldo que hay disponible en mi cuenta",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "muéstrame el saldo de mi cuenta corriente",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola quiero saber el saldo de mi cuenta",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "quisiera saber el saldo de mi cuenta cómo se encuentra actualmente",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "podríamos porque hay mostrarme cuánto cuánto tiene misa con su tengo en la cuenta por favor no sé cuánto saldo tengo en la cuenta",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "buenas me gustaría saber cuál es el saldo de mi cuenta corriente por favor",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "me gustaría saber el saldo de mi cuenta",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola buenos días llamaba por si quiero consultar el saldo disponible en mi cuenta corriente",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "quiero comprobar el saldo de la cuenta eso de la cuenta corriente y mostrarme el saldo de mi cuenta es urgente por favor",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "buenos días quisiera saber el cuál es el saldo de mi contacto gracias",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "muéstrame el saldo de mi cuenta",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "me gustaría conocer el saldo disponible en mi cuenta corriente",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola buenos días quería saber el saldo de mi cuenta corriente por favor muéstrame el saldo de mi cuenta corriente gracias",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "figura buenos días mira quería saber el saldo de mi cuenta corriente a ver si me la podrían consultar y indicar por favor gracias",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "buenos días me gustaría saber cuánto saldo tengo en la cuenta",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "buenos días por favor quería consultar el saldo de mi cuenta corriente muéstrame el saldo de la cuenta mis últimos movimientos por favor",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "me gustaría saber cuál es el saldo actual de mi cuenta",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola buenos días soy cliente de su banco y estaba interesado en conocer el estado de mi cuenta en concreto el saldo en mi cuenta corriente por enseñarme el saldo de mi cuenta",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "quiero saber el saldo actual de mi cuenta por favor",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "hola buenas tardes nada llamaba para preguntarles por el saldo de mi cuenta",
+    "intencion": "balance"
+  },
+  {
+    "transcripcion": "me pueden ayudar con mi tarjeta ha dejado de funcionar",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "hola buenas mira te llamaba porque tengo un problema con mi tarjeta está intentando hacer un pago pero no no funciona no se puede pagar",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "hola buenas tardes estoy intentando comprar online y no problemas con tarjeta me dice que no funcionan",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "hola he tenido un problema al realizar un pago con mi tarjeta me lo ha denegado sabes por qué ha pasado esto",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "o cuando está mi tarjeta no funciona porque ya sabes porque no estás comprando",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "hola mira buenas llamo porque no sé por qué pero mi tarjeta no funciona como que no me deja pagar con ella que puedo hacer",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "el pago con mi tarjeta se ha rechazado",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "hola buenas tardes llamo porque he tenido un problema con la tarjeta que pertenece a un pago pero y la cartilla como que no funciona así que vamos para avisar de que no",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "hola por favor me puedes ayudar con mi tarjeta",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "hola buenos días la verdad es que no sé si está corriendo un problema con mi tarjeta porque no no consigo utilizarla todo debería de estar bien si por favor lo pueden revisar no entiendo cuál puede ser el problema muchas gracias",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "quería saber qué pasa con mi tarjeta que no funciona me rechazan los pagos",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "hola mira resulta que tengo una tarjeta con vuestro banco y he intentado hacer un pago pero me resulta imposible me deniega el pago que podría hacer",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "porque se rechaza mi pago",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "no puedo usar mi tarjeta porque no quiere pagar me podéis ayudar con esto",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "he tenido un problema con mi tarjeta al pagar en el supermercado me la ha rechazado",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "me gustaría que me ayudarán con la tarjeta bancaria tiene un problema y no puedo realizar operaciones con la tarjeta a la hora de pagar me sale un error y no me deja ni la clave pin y efectuar pagos bancarios y piletas la tarjeta en condiciones no sé porque se rechaza mi pago",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "hola buenos días me puedes ayudar con mi tarjeta y tengo realizar un pago pero no me funciona",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "hola buenas mi tarjeta no funciona y no me deja pagar",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "mi tarjeta no funciona",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "buenas estoy intentando realizar un pago con mi tarjeta pero no funciona me dice que la rechaza pero la tarjeta tiene saldo podrían ayudarme a solucionar este problema",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "hola buenos días mira es que tengo vuestra tarjeta y no me deja utilizarla o sea no se debe haber algún problema o algo consultamelo a la mayor brevedad posible por favor",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "estoy tratando de realizar un pago y mi tarjeta sale como denegada entonces quisiera saber qué está pasando con mi tarjeta",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "hola buenos días me llamo porque tenía un problema con mi tarjeta he ido a pagar en el supermercado y rechazaba me pagó pero no sé el motivo por el que no puedo utilizarla me lo puedes explicar",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "hola buenos días es que he tenido un problema con la tarjeta varias veces me la han rechazado pero no no entiendo porque se ha rechazado si tengo y todo dentro de la tarjeta y he pagado",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "necesito ayuda con mi tarjeta no sé porque no funciona y porque se rechaza un pago que hice",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "hola buenos días estaba realizando unas compras ahora mismo y he rechazado mi pago creo que era que no podía usar mi tarjeta por algún motivo no estaba funcionando y me preguntaba si podrían ayudarme a resolver este problema arreglar la tarjeta o al menos decirme qué es lo que está sucediendo con la tarjeta",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "hola estoy probando mi tarjeta y no funciona que puede pasar",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "buenos días la tarjeta de mi banco no está funcionando podrían ayudarme por favor es urgente",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "dónde pueden ayudar con mi tarjeta de crédito o está cayendo rápido a veces porque a veces me dice que no puede ser ya",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "hola buenos días llamaba porque mi tarjeta no hace operaciones no consigo pagar con ella en ningún sitio siempre se me rechaza",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "hola buenas a ver si me puedes ayudar es que no puedo pagar con mi tarjeta no sé qué pasa que cuando voy a usarla me dice que se ha rechazado el pago y no no consigo que funcione",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "me puede ayudar con el uso de la tarjeta me has rechazado el pago y no no sé porque no funciona",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "podéis ayudarme con mi tarjeta de crédito parece que no funciona y no me deja pagar",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "me pueden ayudar con mi tarjeta",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "mi tarjeta no funciona",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "hola he intentado pagar con mi tarjeta y me la han rechazado quería saber qué puedo hacer",
+    "intencion": "card_issues"
+  },
+  {
+    "transcripcion": "hola mira llamaba porque estaría interesado en un nuevo préstamo comercial gracias",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola buenos días soy un cliente del banco que les quiere solicitar un préstamo comercial nuevo he tenido antes varios préstamos con ustedes para estar interesado en este préstamo personal he visto la publicidad en la web y me gustaría que me informasen de las condiciones gracias",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola llamo por un préstamo comercial",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola buenos días mira llamaba porque quería informarme de un préstamo comercial que tiene disponible quería saber cuáles son sus condiciones y demás",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola buenos días verás es que estoy interesado en pedir un préstamo nuevo y no lo tengo muy claro que debo hacer cuáles son los requisitos y demás",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola buenos días llamaba por unas dudas sobre los textos quería saber cómo podría hacer algo préstamo",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola tenía hablar sobre un préstamo comercial",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "llamo por un préstamo comercial",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola buenas tardes le llamaba porque necesitaba un préstamo comercial ahora mismo estoy faltó de liquidez y le llamaba para saber qué tengo que hacer y qué condiciones tengo que reunir para acceder a un préstamo comercial",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola buenos días quisiera que me diera información donde sobre un préstamo personal que tengo y si puedo ampliarlo dónde podría informarme qué pasos tengo que seguir gracias",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "yogur un préstamo comercial sobre un préstamo existente no presto",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "qué has conocido alguna información sobre mi préstamo en el comercial existente",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "llamo para solicitar un préstamo comercial",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola buenas llamaba porque tengo una pregunta sobre un préstamo comercial",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola buenos días hoy fuera mitad ya me hace un tiempo para vernos sabes lo que habían problemas y todo ahora tenía una nueva consulta porque quiero abrir un negocio y necesito solicitar un préstamo a donde tendría que dirigirme para solicitarlo y documentación tendría que llevar para pedir este",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "buenos días me gustaría informarme sobre los préstamos que quiere realizar uno",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola muy buenas me interesaría un préstamo comercial me podéis informar de cómo va la cosa y cómo puedo conseguir uno",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "buenos días mire suene todos los clientes y quería información para solicitar un préstamo comercial los requisitos no sé lo que voy a necesitar para solicitarlo sin si pudieran informar de todo yo por favor no sé dígame qué datos les dejo y",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola mira tengo un préstamo comercial conocer gente y me gusta que hacer un par de preguntas sobre que no entiendo",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola buenos días mira te llamaba porque quería conocer cómo está la situación con mi préstamo comercial",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola buenos días quería preguntar y vuestro banco nos préstamos comerciales o no",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "buenas llamaba por un préstamo comercial me gustaría ser nuevo préstamo",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "buenos días mire quería solicitar un nuevo préstamo comercial",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "buenos días le llamo para pedir información sobre un préstamo comercial además para saber en qué condición se encuentra el préstamo existente que ya me concedieron",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "Hugo cómo va tengo un préstamo comercial porquería",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "solicitud de un nuevo préstamo comercial",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola quería información sobre el nuevo préstamo comercial que ha sacado su banco me podría dar información sobre este préstamo por favor",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola llamaba porque deseo solicitar un préstamo comercial nuevo",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "llamo por un préstamo comercial tengo una pregunta sobre un préstamo existente y hacer un nuevo préstamo gracias",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola buenos días llamo por un préstamo comercial tengo una pregunta sobre el nuevo préstamo comercial que voy a hacer y quería saber cómo se realiza a través de mi banco por favor necesito que me proporcionen información sobre cuáles serían las gestiones para llevarlo a cabo muchas gracias",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "y una buena tarde un tiempo de pedir un préstamo",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola buenos días mira estaría interesado en información respectado respecto a la obtención de un préstamo comercial",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola quisiera solicitar un nuevo préstamo para un negocio que quiero abrir",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola buenos días llamo porque quiero recibir información sobre cómo conseguir un préstamo comercial",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola buenos días llamo para pedir información sobre un nuevo préstamo comercial aunque ya tenía un préstamo existente anterior",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola quería crear un nuevo préstamo comercial cómo podría hacerlo",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola estoy llamando porque quiero tengo una pregunta acerca de un préstamo existente para un préstamo comercial muchas gracias",
+    "intencion": "business_loan"
+  },
+  {
+    "transcripcion": "hola quería saber qué tengo que hacer cuando tengo que pagar una gran cantidad y qué hago con el mensaje de confirmación",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "no sé cómo usar el código que me han enviado por sms",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "buenos días mira estoy intentando realizar un pago importante en línea y me dice que estoy recibiendo mensajes SMS pero no he recibido ningún mensaje pues quería ver si me lo podré solucionar",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "cómo debo proceder para realizar un pago elevado",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "me puede aclarar porque debo recibir un código de configurar de confirmación por SMS y no cargarlo directamente por teléfono con ustedes",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "hola buenos días llamaba porque estaba comprando el mobiliario nuevo para casa por internet y he intentado utilizar la tarjeta pero me dice que recibiré un mensaje en el móvil pero no sé exactamente bien bien que osea que de hacer",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "no sé qué hacer con el mensaje de texto que me habéis enviado para pagar una alta cantidad de dinero",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "he recibido un código SMS del banco para pagar una gran cantidad",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "no sé que se supone que deben hacer estos mensajes SMS con código pago Carrefour",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "buenas estoy realizando una transferencia de una gran cantidad de dinero a otra cuenta corriente y me dijeron que recibiré un código de confirmación por SMS dada la gran cantidad de dinero que estoy traduciendo que tengo que hacer con este con este sms recibir un código en el que tengo que confirmar el la transacción gracias",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "estoy intentando hacer un pago bastante grande en línea y me dice que tengo que recibir un mensaje de texto y no sé que se supone que tienen que hacer estos mensajes con los códigos de pago que he recibido",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "hola buenos días estoy tratando de hacer un pago bastante grande por internet y me han enviado un código del banco pero no sé que hay que hacer con este código ni dónde lo tengo que insertar",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "quiero hacer un pago de una cantidad elevada y he leído algo sobre un SMS que debo hacer con el",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "hola buenas si me la compré un carnet de alto precio y",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "hola buenos días soy cliente de su banco y estoy intentando realizar un pago importante online y me están diciendo que recibo un mensaje de texto pero no sé qué hacer con este código que me mandan en el SMS me lo podrían explicar",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "hola buenos días mire es que estoy intentando realizar un pago muy alto",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "quiero realizar un pago importante en línea y dice que tengo que recibir un mensaje SMS",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "hola buenos días a ver es que estoy intentando hacer una transferencia de gran cantidad y me pone que me van a mandar un mensaje de texto para un código de verificación y demás pero tampoco sé muy bien que tengo que hacer con ese código ni dónde tengo que meterlo",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "realizar un pago de la cantidad alta y he recibido un mensaje directo",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "pago de alto precio estoy tratando de realizar un palo importante en línea y dice que debo recibir un mensaje de mensaje de texto no sé que se supone que venga hacerte un mensaje SMS con código de pan Carrefour",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "hola buenos días estoy tratando de realizar un pago importante desde mi cuenta y he recibido un sms pero no tengo muy claro cuál es el proceso podrían ayudarme gracias",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "quisiera hacer un pago más grande de lo normal y lean las instrucciones dice que el banco me ha mandado un mensaje de texto entonces que necesito saber qué hago con información que recibe la mensaje de texto después de recibir",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "hola buenas llamado porque tengo que hacer un pago de un precio bastante elevado y",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "hola buenas estoy tratando de hacer un pago por línea y recibo un extraño mensaje de texto que no sé qué quiere decir que tengo unos códigos de pago de recibos Valencia medias aclaraciones sobre",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "disculpe no considero que está alta la cantidad de dinero de va solo confirmarse por mí SMS me gustaría preguntarle si podría haber otro tipo de confirmación gracias",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "quiero pagar una gran cantidad de dinero y parece que para ello tengo que recibir una confirmación",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "comprando aquí en Amazon de forma online y me pone que hacer una gran cantidad me enviara mi banco es código confirmación",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "hola buenos días me gustaría realizar un pago de alto precio",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "hola buenas mira te vamos a hacer una transferencia y todo el rato me dice que me va a enviar un mensaje de texto y no sé si es por la cantidad todo o porque hay algún problema",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "hola buenas pues mira resulta que recientemente tengo que realizar un pago de una gran suma de dinero y me dice que voy a recibir un sms de mi banco",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "hola estoy intentando pagar un producto y me ha llegado un mensaje de texto con un código para pagar que se supone que tengo que hacer con ellos",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "hola quiero hacer un pago de una cantidad grande y me han enviado un mensaje de texto y no sé qué tengo que hacer con el",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "hola quiero hacer un pago importante y es una cantidad muy grande pero no veo el SMS que me han dicho que debería recibir",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "he intentado realizar un pago grande y he recibido un código por sms pero no sé qué hacer con este código me podrías ayudar",
+    "intencion": "high_value_payment"
+  },
+  {
+    "transcripcion": "hola buenas tardes el banco y me preguntaba si cuál sería el procedimiento para solicitar una domiciliación bancaria sobre mi papá es porque no tengo tiempo para estar autorizando y bueno básicamente preguntado que podría ser solamente para un tipo de",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "hola buenos días soy cliente de vuestro banco me gustaría conocer mis domiciliaciones gracias",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "buenos días quería preguntar sobre las ponencias viendo bancarias porque el otro día encontré en un cargo del banco con un concepto de domiciliación bancaria y no",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "quiero devolver una domiciliación",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "quería saber qué domiciliaciones bancarias tengo",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "quería saber cómo funcionan las domiciliaciones bancarias",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "hola buenas quería ver mis domiciliaciones bancarias",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "si me podría indicar cuántas domiciliaciones bancarias tengo",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "a buenas tengo varios problemas con las domiciliaciones quería saber cómo ver mis domiciliaciones la aplicación de banca porque no se usarla bien y necesito tener información yo también tenía un recibo de la luz que quería devolver la domiciliación porque no estoy conforme con el recibo en cuestión quería saber lo que hay que hacer para realizar todos estos trámites",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "buenos días me gustaría saber cuáles son mis domiciliaciones",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "hola buenas un amigo me ha comentado algo sobre domiciliaciones bancarias me gustaría saber más del tema si me pudieras informar",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "hola buenos días me gustaría salir citar información sobre sobre las domiciliaciones bancaria ya que no sé muy bien cómo funciona",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "hola buenos días llamada porque quiero consultar cuáles son mis domiciliaciones bancarias que tengo actualmente en mi cuenta muchas gracias",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "obtener información sobre domiciliaciones bancarias",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "buenas me gustaría saber más información sobre las domiciliaciones bancarias y que tendría que hacer en caso de que le devuelve una",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "hola sobre las domiciliaciones bancarias domiciliar una cuenta",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "una pregunta por domiciliaciones bancarias",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "si hola buenos días yo nos clientes y quería comentarte un tema domiciliaciones bancarias es una es una domiciliación en cuestión quisiera devolver un recibo de la luz del mes de junio si a ver si me lo pudiera y no pude ir a buscar por favor y quisiera que se se retorna la que se volviera si a la espera estoy gracias",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "hola buenos días quería ver mis domiciliaciones bancarias creo que hay algún fallo y quise devolver una gracias",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "cómo podría encontrar el listado de todas mis domiciliaciones bancarias",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "muéstrame mis domiciliaciones bancarias",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "hola mira estaría interesado en buscar información en preguntar sobre domiciliaciones bancarias gracias",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "hola quería hablar de las domiciliación de unos recibos",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "hola buenos días me ha llegado en la aplicación del móvil una notificación de una domiciliación bancaria y realmente no sé qué y me gustaría que me pudiera guiar y decir quitarme este movimiento en mi banco",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "tengo una pregunta sobre mis domiciliaciones bancarias a donde podrá encontrar más información",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "ábreme de domiciliaciones bancarias por favor",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "hola me gustaría conocer las domiciliaciones domiciliaciones que tengo realizadas con su banco porque quería alterar una de ellas debido a un fallo técnico quiero devolver el recibo el último recibo que se ha efectuado para el pago de unas facturas",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "quiero ver mis domiciliaciones",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "hola buenos días quisiera que me informase sobre cómo tengo que hacer para hacer una nueva domiciliación bancaria y cuáles serían las instrucciones o si quiero devolver una domiciliación que no sé es correcta gracias",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "hola buenos días una pregunta sobre las domiciliaciones bancarias que me gustaría verlas que tengo actualmente y devolver una domiciliación que tengo",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "hola mira he visto en su página web que tiene una acción de domiciliar bancariamente de domiciliaciones bancarias no sé si me puede explicar un poquito",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "ábreme de domiciliaciones bancarias muéstrame mis domiciliaciones y quiero devolver una domiciliación ya",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "hola me puede hablar del domiciliaciones bancarias",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "después de hablar de domiciliación bancaria",
+    "intencion": "direct_debit"
+  },
+  {
+    "transcripcion": "hola buenas llamaba porque quiero ver mis últimas transacciones y hay un pago que no entiendo porque está ahí",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "hola buenos días hay un pago que no conozco en mi cuenta y me gustaría saber a qué es debido",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "estoy realizando nuestra sección recientes y hay un par de cosas que te pago que no reconozco estos es quisiera saber el tiempo de antenas información",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "hola me gustaría ver mis últimas transacciones porque hay un pago que no reconozco y quiere investigarlo gracias",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "me gustaría saber las últimas transacciones que se encuentran en mi cuenta",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "me gustaría que me mostrara mis últimas transacciones ya que estos últimos meses he estado recibiendo en un pago",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "hola m llamado porque quería saber mis últimas transacciones con la con la tarjeta gracias",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "estoy mirando mi banca online y acabo de ver un pavo que desconozco y quería y me muestre un extracto de mis últimas transacciones y la hora exacta en la que se realizó el pago para saber si es mío no",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "hola buenos días estaba revisando mi historial de compras de la aplicación de Funicamp y hay una compra que no reconozco",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "hay un pago de ayer que no reconozco",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "hola quería preguntar por la última transacción que me aparece que no sé de dónde viene",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "buenos días podría mostrarme mis últimas transacciones creo que hay un pago que no conozco muy bien su procedencia",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "muéstrame mis últimos movimientos mi últimas transacciones",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "hola me puedes mostrar las últimas transacciones es que hay un pago que no reconozco y quiero quiero comprobarlo",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "hola buenos días quería por favor que me mostrase bueno pues los últimos movimientos de mi cuenta lo que son las últimas transacciones porque hay un pago que no reconozco y quería saber de dónde viene y porque me lo han cobrado hay otros que sí que están ahí y lo reconozco pero ese no muchas",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "hola buenos días soy cliente de su banco y llamaba para que me pase de mis últimas transacciones ya que he estado mirando en la web y hay un pago que no conozco no sé a qué corresponde lo podían explicar",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "me puede mostrar mis últimas transacciones hay una transacción que no reconozco",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "muéstrame mis últimas transacciones hago un pago que no conozco si reconozco el pavo",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "hola buenas llamaba para preguntar si podría ver las últimas transacciones hechas con mi tarjeta y bueno también para decir que he visto que hay un pago me el cual no reconozco",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "hola me podrías mostrar mi última transacciones es que hay un pago que no que no sé cuál es",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "hola buenas estado viendo mis transacciones reciente y hay un pago que no conozco se podía saber a qué se debe ese pago",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "quiero ver mis últimas transacciones",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "quiero ver mis últimas transacciones hay un pago que no reconozco",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "hola estoy llamando a mi banco para consultar las transacciones recientes quería que me proporcionará información acerca de mis últimas transacciones por favor",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "hola muy buenas he recibido un poco que no reconozco me gustaría ver las últimas acciones que están en mi cuenta",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "hola buenos días mira quisiera conocer cuáles son las transacciones recientes de mi tarjeta de crédito y en mi cuenta bancaria no sé si me las podías facilitar favor",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "si quería conocer las últimas transacciones de mi cuenta de que hay un cargo que no reconozco bien",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "quería ver mis últimas transacciones que hay un pago que no sé qué es",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "hola buenos días me podrías mostrar mis últimas acciones",
+    "intencion": "latest_transactions"
+  },
+  {
+    "transcripcion": "hola quería saber cómo puedo ingresar dinero en mi cuenta",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "hola buenas me gustaría saber cómo puedo bueno si puedo depositar dinero en mi cuenta y cómo debo cómo debo hacerlo y dónde",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "hola buenas tardes quisiera depositar dinero cómo lo puedo hacer",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "hola buenos días llamaba porque quiero recibir información sobre cómo puedo depositar dinero en mi cuenta muchas gracias",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "hola mira estaría interesado en realizar un depósito en mi cuenta me podrías decir cómo transfiero el dinero",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "hola quería hacer un ingreso en una cuenta",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "hola buenos días mira me gustaría saber cómo puedo depositar dinero en mi cuenta bancaria gracias",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "hola quería hacer un ingreso a mi cuenta me pueden decir cómo depositar dinero en ella cómo puedo transferir dinero de una cuenta a la mía",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "hola buenos días estaba interesado en depositar dinero en mi cuenta y llamará para preguntar el dinero a mi cuenta",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "dónde puedo depositar dinero",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "hola amiga si la calle Serrano y me gustaría saber dónde puedo depositar dinero en mi cuenta si es posible",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "hola buenas llamaba para preguntar dónde puedo depositar el dinero para la cuenta y bueno también para preguntar cómo puedo transferirlo",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "hola bueno llama por acudir preguntar si se puede depositar dinero a mi cuenta",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "hola buenas quería saber qué tengo que hacer para depositar dinero en mi cuenta donde y como y cuánto sería la cantidad mínima para poder realizar este depósito",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "hola me gustaría saber cómo transferir dinero a mi cuenta gracias",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "buenos días me cree la cuenta recientemente me gustaría saber dónde puedo depositar dinero y cuánto",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "mira me acabo de abrir una nueva cuenta y quería saber cuál métodos que me disponible para depositar dinero o transferir dinero de unas cuantas a otras",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "quisiera saber cómo depositar dinero en mi cuenta",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "hola buenos días llamaba porque me gustaría depositar dinero en mi cuenta hacer un ingreso pero no sé cómo hacerlo necesitaría ayuda",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "dónde puedo depositar mi dinero",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "cómo podría depositar dinero o transferir dinero de esta cuenta",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "hola cómo puedo cómo puedo depositar mi dinero",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "hola buenos días quisiera saber instrucciones para ver dónde puedo depositar dinero y como tendría que hacerlo así como si quiero transferir dinero a la cuenta gracias",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "hola quiero que cogí tarde yo mi cuenta",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "hola muy buenas quiero depositar dinero en la cuenta pero no tengo muy claro cómo hacerlo",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "depositar dinero",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "necesito depositar un dinero en efectivo en mi cuenta entonces quisiera saber cuál es la manera más fácil de hacerlo",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "buenos días me gustaría depositar dinero en mi cuenta",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "hola buenas tardes mira me gustaría depositar dinero en mi cuenta de banco",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "dinero depositar dinero",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "qué tengo que hacer para meter dinero en mi cuenta",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "hola buenas mira llamaba porque quiero hacer un ingreso en mi cuenta",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "cómo transferir dinero a la cuenta",
+    "intencion": "cash_deposit"
+  },
+  {
+    "transcripcion": "cómo transfiero dinero a la cuenta donde puedo depositar el dinero",
+    "intencion": "cash_deposit"
+  }
+]
