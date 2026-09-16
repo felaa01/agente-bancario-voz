@@ -152,18 +152,15 @@ Hecho:
 - Loop del agente escrito a mano contra el SDK `google-genai` (`agente/bucle.py`, clase `Agente`),
   con las seis herramientas declaradas como `FunctionDeclaration` y un CLI para chatear
   (`make chat`, necesita `GEMINI_API_KEY` en `.env`). Persona: "Banco Río de la Plata", español
-  rioplatense. Modelo por defecto `gemini-2.5-flash` (confirmar en aistudio.google.com si hay uno
-  más nuevo antes de dar por sentado que sigue siendo el Flash vigente).
+  rioplatense. Modelo por defecto `gemini-3.6-flash` (`gemini-2.5-flash` quedó deprecado para
+  cuentas nuevas; el 404 real de la API el 2026-09-16 recomendó este reemplazo, confirmado en
+  free tier — revisar aistudio.google.com si aparece uno más nuevo).
 - Con esto, la semana 1 queda funcionalmente completa (esqueleto, autorización, backend, agente en
-  modo texto). 61 pruebas no-`en_vivo` pasando (más 2 `en_vivo` en `prueba_bucle_en_vivo.py`,
-  todavía sin correr: falta cargar una `GEMINI_API_KEY` real en `.env` y probar una conversación
-  de punta a punta).
+  modo texto). 61 pruebas no-`en_vivo` pasando más las 2 `en_vivo` de `prueba_bucle_en_vivo.py`,
+  ya corridas con éxito contra Gemini real (2026-09-16).
 
 Próximo paso inmediato:
-- Cargar `GEMINI_API_KEY` en `.env` y correr `uv run --env-file .env pytest -m en_vivo
-  pruebas/prueba_bucle_en_vivo.py` (o `make chat`) para validar el agente con Gemini real.
-
-Después de eso, arranca la semana 2 (RAG de políticas, evaluación de intención con MInDS-14,
-cliente simulado y subconjunto de evaluación en el CI) — ver docs/plan-del-proyecto.md.
+- Arranca la semana 2 (RAG de políticas, evaluación de intención con MInDS-14, cliente simulado y
+  subconjunto de evaluación en el CI) — ver docs/plan-del-proyecto.md.
 
 Actualizá esta sección cada vez que se complete un hito.
