@@ -2,9 +2,13 @@ from __future__ import annotations
 
 from uuid import UUID
 
+import asyncpg
+
 from agente_voz.agente.sesion import Sesion
 from agente_voz.herramientas.autorizacion import requiere_verificacion
 from agente_voz.herramientas.cliente_banco import ClienteBanco
+from agente_voz.rag.incrustaciones import incrustar_consulta
+from agente_voz.rag.repositorio import buscar_hibrido
 
 
 def _id_cliente_verificado(sesion: Sesion) -> UUID:
@@ -122,16 +126,27 @@ async def abrir_disputa(
     return f"Listo, abri la disputa por el cargo de {comercio} (id {disputa.id})."
 
 
-async def buscar_politicas(sesion: Sesion, pregunta: str) -> str:
+async def buscar_politicas(sesion: Sesion, pool: asyncpg.Pool | None, pregunta: str) -> str:
     """Sin @requiere_verificacion: preguntar por politicas no requiere ser cliente
-    identificado. El RAG todavia no existe (es de la semana 2): responder que no
-    hay base de politicas es la aplicacion honesta de la regla 'si ningun documento
-    respalda la respuesta, decirlo en vez de adivinar'.
+    identificado. Si no hay conexion a la base de politicas o no aparece nada
+    relevante, se lo decimos en vez de inventar (regla de diseño: ninguna respuesta
+    sin un documento que la respalde).
     """
-    return (
-        "Todavia no tengo la base de politicas del banco conectada, asi que no puedo "
-        "responder eso con certeza. Te recomiendo derivarte con un humano si es urgente."
-    )
+    if pool is None:
+        return (
+            "Todavia no tengo la base de politicas del banco conectada, asi que no puedo "
+            "responder eso con certeza. Te recomiendo derivarte con un humano si es urgente."
+        )
+
+    fragmentos = await buscar_hibrido(pool, pregunta, incrustar_consulta(pregunta), limite=3)
+    if not fragmentos:
+        return (
+            "No encontre ninguna politica del banco que respalde una respuesta a eso. "
+            "Te recomiendo derivarte con un humano si es urgente."
+        )
+
+    contexto = "\n\n".join(f"({f.documento}) {f.contenido}" for f in fragmentos)
+    return f"Fragmentos de las politicas del banco relacionados con la pregunta:\n\n{contexto}"
 
 
 async def derivar_a_humano(sesion: Sesion, motivo: str) -> str:

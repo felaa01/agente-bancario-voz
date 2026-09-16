@@ -12,7 +12,7 @@ import pytest_asyncio
 
 from agente_voz.api_banco.conexion import crear_pool
 
-TABLAS = "disputas, movimientos, tarjetas, cuentas, clientes"
+TABLAS = "disputas, movimientos, tarjetas, cuentas, clientes, politicas"
 PUERTO_API_DE_PRUEBA = 8123
 
 

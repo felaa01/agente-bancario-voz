@@ -5,6 +5,7 @@ from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
 from typing import Any, cast
 
+import asyncpg
 from google import genai
 from google.genai import types
 
@@ -149,16 +150,21 @@ EjecutorDeHerramienta = Callable[..., Awaitable[str]]
 @dataclass(frozen=True)
 class _EntradaHerramienta:
     funcion: EjecutorDeHerramienta
-    necesita_banco: bool
+    necesita_banco: bool = False
+    necesita_bd: bool = False
 
 
 _REGISTRO: dict[str, _EntradaHerramienta] = {
-    "verificar_identidad": _EntradaHerramienta(herramientas.verificar_identidad, True),
-    "obtener_movimientos": _EntradaHerramienta(herramientas.obtener_movimientos, True),
-    "bloquear_tarjeta": _EntradaHerramienta(herramientas.bloquear_tarjeta, True),
-    "abrir_disputa": _EntradaHerramienta(herramientas.abrir_disputa, True),
-    "buscar_politicas": _EntradaHerramienta(herramientas.buscar_politicas, False),
-    "derivar_a_humano": _EntradaHerramienta(herramientas.derivar_a_humano, False),
+    "verificar_identidad": _EntradaHerramienta(
+        herramientas.verificar_identidad, necesita_banco=True
+    ),
+    "obtener_movimientos": _EntradaHerramienta(
+        herramientas.obtener_movimientos, necesita_banco=True
+    ),
+    "bloquear_tarjeta": _EntradaHerramienta(herramientas.bloquear_tarjeta, necesita_banco=True),
+    "abrir_disputa": _EntradaHerramienta(herramientas.abrir_disputa, necesita_banco=True),
+    "buscar_politicas": _EntradaHerramienta(herramientas.buscar_politicas, necesita_bd=True),
+    "derivar_a_humano": _EntradaHerramienta(herramientas.derivar_a_humano),
 }
 
 
@@ -172,11 +178,13 @@ class Agente:
         sesion: Sesion,
         banco: ClienteBanco,
         *,
+        pool: asyncpg.Pool | None = None,
         modelo: str | None = None,
         api_key: str | None = None,
     ) -> None:
         self._sesion = sesion
         self._banco = banco
+        self._pool = pool
         clave = api_key or os.environ.get("GEMINI_API_KEY")
         if not clave:
             raise RuntimeError("Falta GEMINI_API_KEY (variable de entorno o parametro api_key).")
@@ -197,7 +205,11 @@ class Agente:
             return {"error": f"Herramienta desconocida: {llamada.name}"}
 
         argumentos = llamada.args or {}
-        args_llamada = (self._sesion, self._banco) if entrada.necesita_banco else (self._sesion,)
+        args_llamada: tuple[Any, ...] = (self._sesion,)
+        if entrada.necesita_banco:
+            args_llamada += (self._banco,)
+        if entrada.necesita_bd:
+            args_llamada += (self._pool,)
         try:
             resultado = await entrada.funcion(*args_llamada, **argumentos)
         except AutorizacionError as error:
@@ -208,7 +220,9 @@ class Agente:
         respuesta = await self._chat.send_message(mensaje)
 
         while respuesta.function_calls:
-            partes_de_respuesta = [
+            # Anotado con el alias exacto de send_message: list[types.Part] no alcanza
+            # porque list es invariante (ver mypy si se saca esta anotacion).
+            partes_de_respuesta: list[types.PartUnionDict] = [
                 types.Part.from_function_response(
                     name=llamada.name or "",
                     response=await self._ejecutar_herramienta(llamada),

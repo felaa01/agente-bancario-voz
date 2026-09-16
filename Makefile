@@ -31,6 +31,9 @@ bd-detener:
 sembrar:
 	uv run python -m agente_voz.api_banco.datos_sinteticos
 
+cargar-politicas:
+	uv run python -m agente_voz.rag.cargador
+
 api:
 	uv run uvicorn agente_voz.api_banco.app:app --reload
 
