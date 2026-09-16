@@ -8,6 +8,8 @@ from agente_voz.agente.sesion import Sesion
 from agente_voz.herramientas import herramientas
 from agente_voz.herramientas.autorizacion import SesionBloqueadaError, SesionNoVerificadaError
 from agente_voz.herramientas.cliente_banco import ClienteBanco
+from agente_voz.rag.incrustaciones import incrustar_pasajes
+from agente_voz.rag.repositorio import reemplazar_fragmentos_de_documento
 
 CEDULA = "1.234.567-8"
 FECHA_NACIMIENTO = "1990-01-01"
@@ -253,9 +255,34 @@ async def prueba_bloqueada_rechaza_herramientas_sensibles(
 async def prueba_buscar_politicas_no_requiere_verificacion() -> None:
     sesion = Sesion(id_sesion="s1")
 
-    resultado = await herramientas.buscar_politicas(sesion, "que tan rapido es una disputa")
+    resultado = await herramientas.buscar_politicas(sesion, None, "que tan rapido es una disputa")
 
     assert "no tengo" in resultado.lower()
+
+
+async def prueba_buscar_politicas_sin_resultados_lo_dice_en_vez_de_inventar(
+    pool: asyncpg.Pool,
+) -> None:
+    sesion = Sesion(id_sesion="s1")
+
+    resultado = await herramientas.buscar_politicas(sesion, pool, "algo que no esta en ningun lado")
+
+    assert "no encontre" in resultado.lower()
+
+
+async def prueba_buscar_politicas_devuelve_el_fragmento_relevante(pool: asyncpg.Pool) -> None:
+    embeddings = incrustar_pasajes(["Para bloquear tu tarjeta, llama al 0800-BANCO."])
+    await reemplazar_fragmentos_de_documento(
+        pool,
+        "bloqueo_de_tarjetas.md",
+        ["Para bloquear tu tarjeta, llama al 0800-BANCO."],
+        embeddings,
+    )
+    sesion = Sesion(id_sesion="s1")
+
+    resultado = await herramientas.buscar_politicas(sesion, pool, "como bloqueo mi tarjeta")
+
+    assert "0800-banco" in resultado.lower()
 
 
 async def prueba_derivar_a_humano_funciona_con_sesion_bloqueada() -> None:
