@@ -152,3 +152,59 @@ async def prueba_ejecutar_para_en_seco_con_cuota_agotada_sin_perder_lo_ya_guarda
     )
 
     assert modulo._indices_ya_evaluados(ruta_resultados) == {0}
+
+
+async def prueba_ejecutar_para_en_seco_ante_sobrecarga_sostenida_de_gemini(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    dataset: list[EjemploIntencion] = [
+        {"transcripcion": "a", "intencion": "freeze"},
+        {"transcripcion": "b", "intencion": "balance"},
+    ]
+    ruta_dataset = tmp_path / "dataset.json"
+    guardar_dataset(dataset, ruta_dataset)
+    ruta_resultados = tmp_path / "resultados.jsonl"
+
+    async def _evaluar_falso(
+        indice: int, ejemplo: EjemploIntencion, url_banco: str
+    ) -> modulo.ResultadoEjemplo:
+        if indice == 1:
+            raise APIError(503, {"error": {"message": "high demand"}})
+        return {
+            "indice": indice,
+            "intencion": ejemplo["intencion"],
+            "transcripcion": ejemplo["transcripcion"],
+            "esperado": "fuera_de_alcance",
+            "obtenido": None,
+            "correcto": True,
+        }
+
+    monkeypatch.setattr(modulo, "evaluar_ejemplo", _evaluar_falso)
+    monkeypatch.setattr(modulo, "_ESPERA_ENTRE_LLAMADAS_SEG", 0)
+
+    await modulo.ejecutar(
+        10, "http://x", ruta_dataset=ruta_dataset, ruta_resultados=ruta_resultados
+    )
+
+    assert modulo._indices_ya_evaluados(ruta_resultados) == {0}
+
+
+async def prueba_ejecutar_relanza_un_error_no_transitorio(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    dataset: list[EjemploIntencion] = [{"transcripcion": "a", "intencion": "freeze"}]
+    ruta_dataset = tmp_path / "dataset.json"
+    guardar_dataset(dataset, ruta_dataset)
+    ruta_resultados = tmp_path / "resultados.jsonl"
+
+    async def _evaluar_falso(
+        indice: int, ejemplo: EjemploIntencion, url_banco: str
+    ) -> modulo.ResultadoEjemplo:
+        raise APIError(400, {"error": {"message": "pedido invalido"}})
+
+    monkeypatch.setattr(modulo, "evaluar_ejemplo", _evaluar_falso)
+
+    with pytest.raises(APIError):
+        await modulo.ejecutar(
+            10, "http://x", ruta_dataset=ruta_dataset, ruta_resultados=ruta_resultados
+        )

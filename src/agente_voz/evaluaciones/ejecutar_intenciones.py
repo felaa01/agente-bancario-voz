@@ -8,7 +8,11 @@ from typing import TypedDict
 
 from google.genai.errors import APIError
 
-from agente_voz.agente.bucle import Agente, construir_historial_verificado
+from agente_voz.agente.bucle import (
+    CODIGOS_TRANSITORIOS_GEMINI,
+    Agente,
+    construir_historial_verificado,
+)
 from agente_voz.agente.sesion import Sesion
 from agente_voz.evaluaciones.dataset_intenciones import (
     RUTA_MUESTRA_POR_DEFECTO as RUTA_DATASET_POR_DEFECTO,
@@ -113,13 +117,18 @@ async def ejecutar(
             try:
                 resultado = await evaluar_ejemplo(indice, ejemplo, url_banco)
             except APIError as error:
-                if error.code == 429:
-                    print(
-                        f"\nCuota agotada en el ejemplo [{indice}]: {error}\n"
-                        "Lo que se proceso hasta aca ya quedo guardado. Reintentar manana."
-                    )
-                    break
-                raise
+                # Si el código es transitorio, Agente.enviar ya lo reintentó sin éxito
+                # puertas adentro (ver bucle.py): insistir de nuevo acá no va a servir.
+                # Puede ser cuota diaria agotada (429) o sobrecarga sostenida de Google
+                # (5xx) - en ambos casos, cortar prolijo en vez de reventar con traceback.
+                if error.code not in CODIGOS_TRANSITORIOS_GEMINI:
+                    raise
+                print(
+                    f"\nGemini sigue fallando en el ejemplo [{indice}] tras los reintentos "
+                    f"internos (codigo {error.code}): {error}\n"
+                    "Lo que se proceso hasta aca ya quedo guardado. Reintentar mas tarde."
+                )
+                break
             archivo.write(json.dumps(resultado, ensure_ascii=False) + "\n")
             archivo.flush()
             procesados += 1
