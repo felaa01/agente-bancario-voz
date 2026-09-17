@@ -25,8 +25,8 @@ MODELO_POR_DEFECTO = "gemini-3.6-flash"
 
 # El free tier de Gemini devuelve 429 (cuota agotada) o 5xx (sobrecarga transitoria en
 # los servidores de Google) con cierta frecuencia. Sin este reintento, cualquiera de los
-# dos tira abajo la conversacion entera (ver bug real del 2026-09-17: dos 503 seguidos
-# mataron `make chat` en `cli.py`, perdiendo sesion e historial). Mismo criterio que
+# dos tira abajo la conversación entera (ver bug real del 2026-09-17: dos 503 seguidos
+# mataron `make chat` en `cli.py`, perdiendo sesión e historial). Mismo criterio que
 # `evaluaciones/ejecutar_intenciones.py`.
 _REINTENTOS_GEMINI = 5
 _CODIGOS_TRANSITORIOS_GEMINI = {429, 500, 502, 503, 504}
@@ -43,7 +43,7 @@ async def _enviar_con_reintentos(
             if error.code not in _CODIGOS_TRANSITORIOS_GEMINI or ultimo_intento:
                 raise
             await asyncio.sleep(2**intento + random.random())
-    raise AssertionError("inalcanzable: el ultimo intento siempre retorna o relanza")
+    raise AssertionError("inalcanzable: el último intento siempre retorna o relanza")
 
 
 NOMBRE_BANCO = "Banco Rio de la Plata"

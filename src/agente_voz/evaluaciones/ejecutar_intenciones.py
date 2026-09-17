@@ -19,10 +19,10 @@ from agente_voz.herramientas.cliente_banco import ClienteBanco
 
 RUTA_RESULTADOS_POR_DEFECTO = Path("evaluaciones/reportes/intenciones.jsonl")
 
-# El free tier de Gemini tiene limites bajos de RPM: se espera entre llamadas para no
+# El free tier de Gemini tiene límites bajos de RPM: se espera entre llamadas para no
 # saturarlo. El reintento con backoff ante un 429/5xx ya lo hace Agente.enviar por su
-# cuenta (ver bucle.py); duplicarlo aca los anidaria (el de aca reintentaria un
-# agente.enviar que ya reintento puertas adentro).
+# cuenta (ver bucle.py); duplicarlo acá los anidaría (el de acá reintentaría un
+# agente.enviar que ya reintentó puertas adentro).
 _ESPERA_ENTRE_LLAMADAS_SEG = 4.0
 
 # Cliente ficticio que no existe en la base: no importa, porque solo medimos que

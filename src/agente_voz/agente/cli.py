@@ -28,9 +28,9 @@ async def _conversar() -> None:
                     respuesta = await agente.enviar(mensaje)
                 except APIError as error:
                     # Ya se agotaron los reintentos internos de Agente.enviar (ver
-                    # bucle.py). No cortar la sesion entera por esto: avisar y dejar
+                    # bucle.py). No cortar la sesión entera por esto: avisar y dejar
                     # que el cliente decida si reintenta el mismo mensaje.
-                    print(f"agente> (error {error.code} hablando con el modelo, proba de nuevo)")
+                    print(f"agente> (error {error.code} hablando con el modelo, probá de nuevo)")
                     continue
                 print(f"agente> {respuesta}")
     finally:

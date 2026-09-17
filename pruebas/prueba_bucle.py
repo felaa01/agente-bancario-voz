@@ -115,7 +115,7 @@ async def prueba_las_llamadas_se_acumulan_en_orden() -> None:
 
 class _ChatFalso:
     """Doble de prueba para AsyncChat: no llama a la red, repite una secuencia de
-    resultados fijada de antemano (exito o APIError)."""
+    resultados fijada de antemano (éxito o APIError)."""
 
     def __init__(self, resultados: list[APIError | types.GenerateContentResponse]) -> None:
         self._resultados = resultados
