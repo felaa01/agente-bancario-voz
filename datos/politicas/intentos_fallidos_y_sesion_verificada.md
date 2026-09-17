@@ -1,0 +1,7 @@
+En Banco Río de la Plata, el cliente tiene hasta 3 intentos consecutivos para verificar su identidad con el agente automatizado usando cédula de identidad y fecha de nacimiento. Un intento de verificación es fallido cuando alguno de los dos datos no coincide con los registrados. Una verificación exitosa reinicia el contador de intentos fallidos.
+
+Cuando un cliente acumula 3 intentos fallidos consecutivos de verificación de identidad con el agente automatizado de Banco Río de la Plata, la sesión queda bloqueada durante 30 minutos para toda operación que requiera identidad. Durante ese bloqueo de sesión, el agente no consulta saldos ni movimientos, no bloquea tarjetas y no abre disputas, aunque el cliente vuelva a intentar con datos correctos.
+
+Con la sesión bloqueada por intentos fallidos de verificación, el agente automatizado de Banco Río de la Plata puede seguir respondiendo consultas generales sobre políticas del banco y siempre ofrece derivar al cliente a un agente humano. Si el cliente reporta robo, pérdida o fraude de una tarjeta con la sesión bloqueada, el agente lo deriva de inmediato a la atención humana de emergencias de tarjetas, que funciona las 24 horas.
+
+En Banco Río de la Plata, una sesión verificada con el agente automatizado vence después de 10 minutos sin actividad del cliente o, en cualquier caso, a los 60 minutos de haberse verificado la identidad. Cuando la sesión verificada vence, el cliente tiene que volver a verificar su identidad antes de realizar cualquier consulta u operación sobre sus productos.

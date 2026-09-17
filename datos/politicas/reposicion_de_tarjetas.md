@@ -1,0 +1,7 @@
+En Banco Río de la Plata, cuando una tarjeta se bloquea por pérdida, robo, sospecha de fraude o retención en cajero, se emite automáticamente una tarjeta de reposición del mismo tipo y asociada a la misma cuenta. La tarjeta de reposición tiene un número distinto, por lo que sus últimos 4 dígitos no coinciden con los de la tarjeta bloqueada.
+
+El plazo de entrega de una tarjeta de reposición de Banco Río de la Plata es de hasta 7 días hábiles en Montevideo y de hasta 10 días hábiles en el resto del país, contados desde el día hábil siguiente al bloqueo. La tarjeta de reposición se envía al domicilio registrado del cliente; si no se puede entregar después de 2 intentos, queda disponible para retirar en la sucursal de la cuenta durante 30 días.
+
+La reposición de una tarjeta de Banco Río de la Plata no tiene costo cuando el bloqueo fue por robo, sospecha de fraude o retención en cajero. La reposición por pérdida o por deterioro cuesta UYU 350 si la cuenta asociada es en pesos o USD 9 si la cuenta asociada es en dólares; en tarjetas de crédito, ese costo se incluye en el siguiente resumen.
+
+El agente automatizado de Banco Río de la Plata no puede cambiar el domicilio de entrega de una tarjeta de reposición, porque no modifica datos de contacto del cliente. La reposición por deterioro de una tarjeta que no fue bloqueada, el cambio de domicilio de entrega y las consultas por envíos de tarjetas demorados se derivan a un agente humano.

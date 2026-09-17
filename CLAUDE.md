@@ -160,7 +160,7 @@ Hecho:
   corridas con éxito contra Gemini real (2026-09-16). Cambio de modelo mergeado en
   [PR #1](https://github.com/felaa01/agente-bancario-voz/pull/1).
 
-- **Semana 2, RAG de políticas: la plumbing está armada, faltan los documentos reales.** Tabla
+- **Semana 2, RAG de políticas: completo y validado de punta a punta.** Tabla
   `politicas` en pgvector (embedding vector(384) + columna generada `tsvector` en configuración
   `spanish`, índices HNSW y GIN). Embeddings con `multilingual-e5-small` corridos con `fastembed`
   (ONNX Runtime, sin PyTorch): el modelo no viene soportado nativamente en fastembed, así que se
@@ -172,6 +172,30 @@ Hecho:
   tenía la base conectada); si no hay pool o no aparece nada relevante, lo sigue diciendo en vez
   de inventar. Pico de RAM medido del modelo de embeddings: ~505 MB de proceso completo (ver
   README, sección de presupuesto de recursos).
+  - Los 17 documentos de `datos/politicas/` los redactó una IA externa (no Claude) a partir de un
+    prompt armado con el contexto del banco ficticio y la restricción de chunking por párrafo
+    autocontenido. Revisados a mano: consistencia numérica entre archivos (60 días de plazo de
+    disputa, costos de reposición), formato, y cobertura de casos "trampa" (inversiones, préstamos,
+    apertura de cuentas) para que el agente diga que no sabe en vez de inventar. Se encontró y
+    corrigió una inconsistencia real antes de cargar: tres archivos hablaban de "saldo disponible"
+    vs. "saldo contable", pero el esquema real (`cuentas`) y `consultar_saldo` solo manejan un
+    único campo `saldo`; se simplificó la política a un solo "saldo" para no prometer una
+    distinción que el backend no puede dar.
+  - Validado con el agente real (`make chat`, 2026-09-17) con 4 preguntas que cubren los casos
+    típicos y las trampas: plazo de disputa, un pedido de consejo de inversión (debe derivar sin
+    opinar), una pregunta fuera de alcance (debe reconocer que no tiene con qué responder en vez
+    de forzar una respuesta con los fragmentos más cercanos que le trajo la búsqueda vectorial,
+    que no tiene umbral de relevancia) y reposición de tarjeta combinando dos políticas (plazos +
+    costo en dólares). Las 4 respuestas quedaron bien respaldadas en los documentos, sin
+    inventar nada.
+  - **Bug de robustez encontrado y arreglado durante esa validación:** `Agente.enviar()` en
+    `bucle.py` no tenía reintentos propios alrededor de `self._chat.send_message`; a diferencia de
+    `ejecutar_intenciones.py`, un 429 o un 5xx transitorio de Gemini (pasó en vivo: dos 503
+    seguidos por sobrecarga del lado de Google) tiraba abajo `make chat` entero, perdiendo sesión e
+    historial. Fix: helper `_enviar_con_reintentos` con backoff exponencial (mismo criterio que la
+    evaluación de intención: reintenta 429/500/502/503/504, no reintenta el resto), envolviendo
+    las dos llamadas a `send_message` del loop. 3 pruebas nuevas con un doble de prueba
+    (`_ChatFalso`, sin red real).
 - Agregada una séptima herramienta, `consultar_saldo` (con `@requiere_verificacion`, usa
   `ClienteBanco.obtener_cuentas` que ya traía el saldo, sin tocar el backend). Surgió al preparar
   la evaluación de intención con MInDS-14: "balance" es el intent más frecuente del dataset y no
@@ -208,9 +232,6 @@ Hecho:
     sea un error real de intención.
 
 Próximo paso inmediato:
-- Escribir los 15-20 documentos reales de políticas en `datos/politicas/` (esto lo hace Juan, no
-  Claude: define las respuestas "correctas" para toda la evaluación de después) y correr
-  `make cargar-politicas` contra ellos.
 - Correr `make evaluar-intenciones` día a día (20 llamadas de cuota por día) hasta completar los
   42 ejemplos de la muestra, y volcar los resultados en la tabla de evaluación del README.
 

@@ -1,0 +1,7 @@
+En Banco Río de la Plata, los motivos válidos para bloquear una tarjeta de débito o de crédito a través del agente automatizado son: pérdida o extravío, robo, sospecha de fraude o de uso no reconocido, y retención de la tarjeta en un cajero automático. Para bloquear una tarjeta, el cliente tiene que tener la identidad verificada.
+
+El bloqueo de una tarjeta realizado por el agente automatizado de Banco Río de la Plata es definitivo: la tarjeta pasa del estado activa al estado bloqueada y no puede reactivarse. Si el cliente encuentra una tarjeta después de haberla bloqueado, esa tarjeta ya no sirve y el cliente tiene que usar la tarjeta de reposición, que tiene otro número.
+
+Antes de bloquear una tarjeta, el agente automatizado de Banco Río de la Plata identifica la tarjeta solo por su tipo (débito o crédito) y sus últimos 4 dígitos, informa que el bloqueo es definitivo y pide confirmación explícita, por ejemplo: "¿Confirmás que querés bloquear la tarjeta de débito terminada en 4821?". Sin una respuesta afirmativa clara, el agente no ejecuta el bloqueo de la tarjeta.
+
+Si el cliente pide bloquear una tarjeta de Banco Río de la Plata que ya figura en estado bloqueada, el agente automatizado informa que la tarjeta ya está bloqueada y no repite la operación. Bloquear una tarjeta solo para frenar un débito automático o una suscripción no es un motivo válido de bloqueo: el bloqueo no cancela la adhesión con el comercio, y un cobro ya realizado se gestiona como disputa.
