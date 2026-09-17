@@ -3,7 +3,6 @@ from __future__ import annotations
 import argparse
 import asyncio
 import json
-import random
 from pathlib import Path
 from typing import TypedDict
 
@@ -20,11 +19,11 @@ from agente_voz.herramientas.cliente_banco import ClienteBanco
 
 RUTA_RESULTADOS_POR_DEFECTO = Path("evaluaciones/reportes/intenciones.jsonl")
 
-# El free tier de Gemini tiene limites bajos de RPM: se espera entre llamadas y se
-# reintenta con backoff exponencial en vez de tirar toda la corrida por un 429.
+# El free tier de Gemini tiene limites bajos de RPM: se espera entre llamadas para no
+# saturarlo. El reintento con backoff ante un 429/5xx ya lo hace Agente.enviar por su
+# cuenta (ver bucle.py); duplicarlo aca los anidaria (el de aca reintentaria un
+# agente.enviar que ya reintento puertas adentro).
 _ESPERA_ENTRE_LLAMADAS_SEG = 4.0
-_REINTENTOS = 5
-_CODIGOS_TRANSITORIOS = {429, 500, 502, 503, 504}
 
 # Cliente ficticio que no existe en la base: no importa, porque solo medimos que
 # herramienta intenta llamar el agente, no el resultado. Un cliente_id inexistente
@@ -44,18 +43,6 @@ class ResultadoEjemplo(TypedDict):
     correcto: bool
 
 
-async def _enviar_con_reintentos(agente: Agente, mensaje: str) -> None:
-    for intento in range(_REINTENTOS):
-        try:
-            await agente.enviar(mensaje)
-            return
-        except APIError as error:
-            si_ultimo_intento = intento == _REINTENTOS - 1
-            if error.code not in _CODIGOS_TRANSITORIOS or si_ultimo_intento:
-                raise
-            await asyncio.sleep(2**intento + random.random())
-
-
 async def evaluar_ejemplo(
     indice: int, ejemplo: EjemploIntencion, url_banco: str
 ) -> ResultadoEjemplo:
@@ -68,7 +55,7 @@ async def evaluar_ejemplo(
     )
     async with ClienteBanco(url_banco) as banco:
         agente = Agente(sesion, banco, historial_inicial=historial)
-        await _enviar_con_reintentos(agente, ejemplo["transcripcion"])
+        await agente.enviar(ejemplo["transcripcion"])
 
     obtenido = agente.herramientas_llamadas[0] if agente.herramientas_llamadas else None
     return ResultadoEjemplo(
