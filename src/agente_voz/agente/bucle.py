@@ -26,10 +26,12 @@ MODELO_POR_DEFECTO = "gemini-3.6-flash"
 # El free tier de Gemini devuelve 429 (cuota agotada) o 5xx (sobrecarga transitoria en
 # los servidores de Google) con cierta frecuencia. Sin este reintento, cualquiera de los
 # dos tira abajo la conversación entera (ver bug real del 2026-09-17: dos 503 seguidos
-# mataron `make chat` en `cli.py`, perdiendo sesión e historial). Mismo criterio que
-# `evaluaciones/ejecutar_intenciones.py`.
+# mataron `make chat` en `cli.py`, perdiendo sesión e historial). Publica (no privada)
+# porque `evaluaciones/ejecutar_intenciones.py` la reusa: si un APIError con uno de estos
+# codigos llega hasta ahi, es porque _enviar_con_reintentos ya lo reintento sin exito, asi
+# que tiene el mismo criterio para cortar prolijo en vez de reintentar (o reventar) de nuevo.
 _REINTENTOS_GEMINI = 5
-_CODIGOS_TRANSITORIOS_GEMINI = {429, 500, 502, 503, 504}
+CODIGOS_TRANSITORIOS_GEMINI = {429, 500, 502, 503, 504}
 
 
 async def _enviar_con_reintentos(
@@ -40,7 +42,7 @@ async def _enviar_con_reintentos(
             return await chat.send_message(mensaje)
         except APIError as error:
             ultimo_intento = intento == _REINTENTOS_GEMINI - 1
-            if error.code not in _CODIGOS_TRANSITORIOS_GEMINI or ultimo_intento:
+            if error.code not in CODIGOS_TRANSITORIOS_GEMINI or ultimo_intento:
                 raise
             await asyncio.sleep(2**intento + random.random())
     raise AssertionError("inalcanzable: el último intento siempre retorna o relanza")
