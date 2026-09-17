@@ -1,7 +1,18 @@
+import asyncio
+from typing import cast
+
 import pytest
 from google.genai import types
+from google.genai.chats import AsyncChat
+from google.genai.errors import APIError
 
-from agente_voz.agente.bucle import _REGISTRO, Agente, _declaraciones_de_herramientas
+from agente_voz.agente.bucle import (
+    _REGISTRO,
+    _REINTENTOS_GEMINI,
+    Agente,
+    _declaraciones_de_herramientas,
+    _enviar_con_reintentos,
+)
 from agente_voz.agente.sesion import Sesion
 from agente_voz.herramientas.cliente_banco import ClienteBanco
 
@@ -100,3 +111,58 @@ async def prueba_las_llamadas_se_acumulan_en_orden() -> None:
     await agente._ejecutar_herramienta(types.FunctionCall(name="obtener_movimientos", args={}))
 
     assert agente.herramientas_llamadas == ["buscar_politicas", "obtener_movimientos"]
+
+
+class _ChatFalso:
+    """Doble de prueba para AsyncChat: no llama a la red, repite una secuencia de
+    resultados fijada de antemano (exito o APIError)."""
+
+    def __init__(self, resultados: list[APIError | types.GenerateContentResponse]) -> None:
+        self._resultados = resultados
+        self.llamadas = 0
+
+    async def send_message(
+        self, mensaje: types.PartUnionDict | list[types.PartUnionDict]
+    ) -> types.GenerateContentResponse:
+        resultado = self._resultados[self.llamadas]
+        self.llamadas += 1
+        if isinstance(resultado, APIError):
+            raise resultado
+        return resultado
+
+
+async def _sin_espera(segundos: float) -> None:
+    return None
+
+
+async def prueba_enviar_con_reintentos_reintenta_un_error_transitorio(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(asyncio, "sleep", _sin_espera)
+    chat = _ChatFalso([APIError(503, {}), types.GenerateContentResponse()])
+
+    respuesta = await _enviar_con_reintentos(cast(AsyncChat, chat), "hola")
+
+    assert chat.llamadas == 2
+    assert respuesta.text is None
+
+
+async def prueba_enviar_con_reintentos_no_reintenta_un_error_no_transitorio() -> None:
+    chat = _ChatFalso([APIError(400, {})])
+
+    with pytest.raises(APIError):
+        await _enviar_con_reintentos(cast(AsyncChat, chat), "hola")
+
+    assert chat.llamadas == 1
+
+
+async def prueba_enviar_con_reintentos_relanza_tras_agotar_los_intentos(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(asyncio, "sleep", _sin_espera)
+    chat = _ChatFalso([APIError(503, {}) for _ in range(_REINTENTOS_GEMINI)])
+
+    with pytest.raises(APIError):
+        await _enviar_con_reintentos(cast(AsyncChat, chat), "hola")
+
+    assert chat.llamadas == _REINTENTOS_GEMINI

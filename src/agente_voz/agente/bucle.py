@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import asyncio
 import os
+import random
 from collections.abc import Awaitable, Callable
 from dataclasses import dataclass
 from typing import Any, cast
@@ -8,6 +10,8 @@ from typing import Any, cast
 import asyncpg
 from google import genai
 from google.genai import types
+from google.genai.chats import AsyncChat
+from google.genai.errors import APIError
 
 from agente_voz.agente.sesion import Sesion
 from agente_voz.herramientas import herramientas
@@ -18,6 +22,29 @@ from agente_voz.herramientas.cliente_banco import ClienteBanco
 # la API el 2026-09-16, que recomendaba pasar a "gemini-3.6-flash"). Revisar en
 # https://aistudio.google.com si aparecio uno mas nuevo antes de asumir que este sigue vigente.
 MODELO_POR_DEFECTO = "gemini-3.6-flash"
+
+# El free tier de Gemini devuelve 429 (cuota agotada) o 5xx (sobrecarga transitoria en
+# los servidores de Google) con cierta frecuencia. Sin este reintento, cualquiera de los
+# dos tira abajo la conversacion entera (ver bug real del 2026-09-17: dos 503 seguidos
+# mataron `make chat` en `cli.py`, perdiendo sesion e historial). Mismo criterio que
+# `evaluaciones/ejecutar_intenciones.py`.
+_REINTENTOS_GEMINI = 5
+_CODIGOS_TRANSITORIOS_GEMINI = {429, 500, 502, 503, 504}
+
+
+async def _enviar_con_reintentos(
+    chat: AsyncChat, mensaje: types.PartUnionDict | list[types.PartUnionDict]
+) -> types.GenerateContentResponse:
+    for intento in range(_REINTENTOS_GEMINI):
+        try:
+            return await chat.send_message(mensaje)
+        except APIError as error:
+            ultimo_intento = intento == _REINTENTOS_GEMINI - 1
+            if error.code not in _CODIGOS_TRANSITORIOS_GEMINI or ultimo_intento:
+                raise
+            await asyncio.sleep(2**intento + random.random())
+    raise AssertionError("inalcanzable: el ultimo intento siempre retorna o relanza")
+
 
 NOMBRE_BANCO = "Banco Rio de la Plata"
 
@@ -275,7 +302,7 @@ class Agente:
         return {"resultado": resultado}
 
     async def enviar(self, mensaje: str) -> str:
-        respuesta = await self._chat.send_message(mensaje)
+        respuesta = await _enviar_con_reintentos(self._chat, mensaje)
 
         while respuesta.function_calls:
             # Anotado con el alias exacto de send_message: list[types.Part] no alcanza
@@ -287,6 +314,6 @@ class Agente:
                 )
                 for llamada in respuesta.function_calls
             ]
-            respuesta = await self._chat.send_message(partes_de_respuesta)
+            respuesta = await _enviar_con_reintentos(self._chat, partes_de_respuesta)
 
         return respuesta.text or ""
